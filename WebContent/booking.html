@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+
+<title>Theme Template for Bootstrap</title>
+
+<!-- Bootstrap core CSS -->
+<link href="board/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap theme -->
+<link href="board/css/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="theme.css" rel="stylesheet">
+<style type="text/css">
+.maindiv {
+	margin: 100px;
+}
+
+.seconddiv {
+	width: 100%;
+	border-top: 1px solid #555;
+	padding: 8px 0 7px 0;
+}
+
+.seatchoice {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 452px;
+	border: 1px solid #d8d9db;
+}
+
+.seatlayout {
+	width: 100%;
+	height: 270px;
+	margin: 40px 80px;
+}
+
+.seatnumber {
+	padding: 10px 0 10px 20px;
+	background-color: #f2f4f5;
+	border: 1px solid #d8d9db;
+	border-bottom: 0;
+}
+
+.seat {
+	content: '';
+	margin: 4px;
+	width: 25px;
+	height: 25px;
+	border: none;
+	background-color: #e9ecef;
+	border-radius: 3px;
+}
+
+.seat:hover {
+	background-color: #503396;
+}
+
+.row {
+	width: 20px;
+	height: 20px;
+}
+
+.movieinfo {
+	overflow: hidden;
+	position: absolute;
+	left: 800px;
+	top: 150px;
+	width: 310px;
+	height: 500px;
+	margin-left: 40px;
+	color: #fff;
+	background-color: #333;
+	border-radius: 7px;
+}
+
+.seatask {
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	height: 38px;
+	margin: 0;
+	padding: 0;
+	color: #222;
+	font-size: 1.2em;
+	line-height: 38px;
+	font-weight: bold;
+}
+
+.moreinfo {
+	padding: 5px 0 0 0;
+	font-size: .8667em;
+	color: #aaa;
+	line-height: 1.1;
+}
+.theatername{
+    padding: 20px 0 0 28px;
+	font-size: 10pt;
+	color: #aaa;
+	line-height: 1.1;
+}
+.movietime,.movieday{
+ padding: 10px 0 0 28px;
+	font-size: .9500em;
+	color: #aaa;
+	line-height: 1.1;
+}
+.chooseseat,.possibleseat,.finishseat{
+padding: 5px 0 0 0;
+	font-size: .8600em;
+	color: #aaa;
+	line-height: 1.1;
+}
+
+.selectbox {
+	content: '';
+	display: table;
+}
+
+.seatclear {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.clearbutton {
+	display: inline-block;
+	height: 36px;
+	margin: 0 13px 0 0;
+	padding: 0 15px;
+	text-align: center;
+	line-height: 34px;
+	color: #503396;
+	font-weight: 400;
+	border-radius: 4px;
+	border: none;
+	vertical-align: middle;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.innermovie {
+	overflow: hidden;
+	width: 100%;
+	padding: 1px 0 0 0;
+	font-size: 1.0667em;
+	font-weight: 400;
+	line-height: 1.1;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+img {
+	position: absolute;
+	left: 68%;
+	top: 10px;
+	width: 70px;
+	height: 100px;
+}
+
+.infoone {
+	overflow: hidden;
+	position: relative;
+	margin-left: 20px;
+	padding: 0 0 0 28px;
+	border-bottom: 1px solid #434343;
+}
+
+.infotwo {
+	position: relative;
+	min-height: 121px;
+	margin-left: 20px;
+	padding: 0 104px 0 0;
+	font-size: .8667em;
+	border-bottom: 1px solid #434343;
+}
+.choiceseatbox{
+overflow: hidden;
+    position: relative;
+    min-height: 200px;
+    margin: 10px 0 0 20px;
+    border-radius: 5px;
+    border: 1px solid #434343;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.seatdefault{
+margin:25px 0 0 30px;
+}
+.myseatinfo{
+margin:25px 30px 0 0;
+}
+.no{
+    display: block;
+    float: left;
+    width: 50%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    line-height: 40px;
+    text-align: center;
+    color: #fff!important;
+    border: 0;
+    border-radius: 0;
+    background-color: #53565b;
+}
+.yes{
+display: block;
+    float: right;
+    width: 50%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 40px;
+    color: #fff!important;
+    border: 0;
+    border-radius: 0;
+background-color:#329eb1;
+}
+.finishbutton{
+margin-top:40px;
+}
+</style>
+<script src="board/js/ie-emulation-modes-warning.js"></script>
+</head>
+
+<body role="document">
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top"
+		style="background-color: purple">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">WebTheater</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
+							<span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+
+	<div class="container theme-showcase" role="main">
+
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="maindiv">
+			<h3 style="padding-bottom: 15px;">빠른예매</h3>
+			<div class="selectbox">
+				<div class="movieinfo">
+				<div style="padding: 15px 20px 0 0;">
+					<span class="glyphicon glyphicon-heart" style="display:absolute; left:20px;top:20px; color:purple;"></span>
+					<div class="infoone">
+						<p class="innermovie">영화이름</p>
+						<p class="moreinfo">영화정보</p>
+					</div>
+					<div class="infotwo">
+						<p class="theatername">
+							영화관이름
+						</p>
+						<p class="movieday">
+							2020-11-07(토)
+						</p>
+						<p class="movietime">
+							1:00 ~ 3:00
+						</p>
+						<img src="img/1.jpg"></img>
+					</div>
+					<div class="choiceseatbox">
+					<div class="seatdefault">
+					<div style="width:15px;height:15px;background-color:purple;position:static"></div>
+					<p class="chooseseat">선택</p>
+					<div style="width:15px;height:15px;background-color:black;position:static"></div>
+					<p class="chooseseat">예매완료</p>
+					<div style="width:15px;height:15px;background-color:#e9ecef;position:static"></div>
+					<p class="chooseseat">가능한좌석</p>
+					</div>
+					<div class="myseatinfo">
+					<p class="moreinfo">선택좌석</p>
+					</div>
+					</div>
+					</div>
+					<div class="finishbutton">
+					<a class="no">취소</a>
+					<a class="yes">완료</a>
+					</div>
+				</div>
+				<div class="seconddiv">
+					<div class="seatclear">
+						<p class="seatask">좌석을 선택해주세요</p>
+						<button class="clearbutton">clear</button>
+					</div>
+					<div class="seatchoice">
+						<h3 style="text-align: center; margin-top: 60px">SCREEN</h3>
+						<div class="seatlayout">
+							A
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<br> B
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<br> C
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<br> D
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<br> E
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<br> F
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<button class="seat"></button>
+							<br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="../../dist/js/bootstrap.min.js"></script>
+		<script src="../../assets/js/docs.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

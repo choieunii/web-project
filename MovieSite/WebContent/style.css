@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+body {
+	background: white;
+	margin-bottom: 200px;
+}
+
+h1 {
+	color: black;
+	text-align: center;
+}
+
+h3 {
+	margin-top: 30px;
+	margin-left: 50px;
+}
+
+h5 {
+	margin-top: 0px;
+	margin-left: 60px;
+}
+/*login, findIdPW*/
+#box{
+	margin: auto;
+	height: 390px;
+	width: 650px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(190, 190, 190);
+	height: 390px;
+}
+
+#title {
+	height: 21px;
+	padding: 16px;
+	font-style: bold;
+	font-size: 13px;
+	color: white;
+	background: purple;
+}
+
+/*findIdPw*/
+#check_f {
+	width: 70px;
+	margin-left: 10px;
+	border-width: 0px;
+	border-radius: 5px;
+	font-size: 12px;
+	padding: 5px;
+}
+.find_f {
+	margin: 10px;
+	width: 140px;
+	border-width: 0px;
+	border-radius: 5px;
+	font-size: 13px;
+	padding: 10px;
+}
+
+/*login*/
+#body_l {
+	column-count: 2;
+	column-rule: 1px solid rgb(190, 190, 190);
+	margin-top: 20px;
+}
+
+#input_login {
+	position: relative;
+	margin-top: 30px;
+	margin-left: 10px;
+	left: 15px;
+	height: 200px;
+	font-size: 13px;
+	vertical-align: center;
+}
+#login{
+	width: 100px;
+	margin: auto;
+}
+#id, #pw {
+	width: 240px;
+	height: 20px;
+	padding: 5px;
+	margin: 5px;
+}
+
+#poster {
+	margin-left: 50px;
+	height: 295px;
+	object-fit: cover;
+}
+
+/*signIn*/
+#box_s {
+	margin: auto;
+	heignt: 2000px;
+	width: 750px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(190, 190, 190);
+}
+
+#title_s {
+	text-align: center;
+	height: 30px;
+	padding: 20px;
+	font-style: bold;
+	font-size: 19px;
+	color: white;
+	background: purple;
+}
+table {
+	margin: auto;
+	margin-top: 40px;
+	border-collapse: collapse;
+	border-width: 0.1em;
+	border-color: rgb(190, 190, 190);
+	border-spacing: 0px;
+	height: 200px;
+	width: 60%;
+	font-size: 13px;
+}
+
+th, td {
+	padding: 7px;
+}
+
+th {
+	background: rgb(224, 224, 224);
+}
+
+table>input{
+	height: 25px;
+	width: 60%;
+}
+
+.find_S {
+	margin-top: 50px;
+	margin-left: 32%;
+	width: 40%;
+	border-width: 0px;
+	border-radius: 5px;
+	font-size: 13px;
+	padding: 10px;
+}
+  #checks{
+  	margin: auto;
+    width: 500px;
+    border: 1px solid grey;
+    padding: 20px;
+    line-height: 3;
+  }

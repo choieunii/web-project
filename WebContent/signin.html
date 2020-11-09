@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>signIn</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<br>
+	<h1>
+		<b>충 무 로 영 화 관</b>
+	</h1>
+	<br>
+	<div id="box_s">
+		<div id="title_s">&nbsp;&nbsp;회 원 가 입</div>
+		<h3>1. 회원정보 입력</h3>
+		<h5>회원정보를 입력해주세요.</h5>
+		<div id="body1_s">
+			<table border="1">
+				<tr>
+					<th>이름</th>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<th>생년월일</th>
+					<td><input type="text" name="birth"></td>
+				</tr>
+				<tr>
+					<th>아이디</th>
+					<td><input type="text" name="id"
+						placeholder="영문, 숫자 조합 (8-12자) "> &emsp;
+						<button id="check">중복확인</button></td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td><input type="text" name="pw"
+						placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합">
+				</tr>
+				<tr>
+					<th>비밀번호 확인</th>
+					<td><input type="text" name="pw_ch"
+						placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합">
+				</tr>
+				<tr>
+					<th>이메일 주소</th>
+					<td><input type="text" name="pw_ch"
+						placeholder="이메일 주소를 입력해주세요. ">
+				</tr>
+			</table>
+			<br>
+			<button id="find_s">확인</button>
+		</div>
+		<div id="body2_s">
+			<h3>2. 약관동의 및 정보활용동의</h3>
+			<h5>충무로영화관 서비스 이용을 위한 약관을 동의해주세요.</h5>
+            <div id="checks">
+               <input type="checkbox" id="all">필수항목 전체동의 <br>
+               <input type="checkbox" id="service"> 서비스 이용약관 동의(필수)  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <small><button>자세히보기</button></small> <br>
+               <input type="checkbox" id="personal"> 개인정보 수집 및 이용동의(필수) &emsp;&emsp;&emsp;&emsp;&emsp;<small> <button>자세히보기</button></small> <br>
+               <input type="checkbox" id="marketing"> 마케팅 활용을 위한 개인정보 수집 이용 &emsp;&emsp;<small> <button>자세히보기</button></small> <br>
+              
+            </div>
+		</div>
+      <br>
+      <input type="submit" id="find_s" value="회 원 가 입">
+      
+	</div>
+
+</body>
+</html>

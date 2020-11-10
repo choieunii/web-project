@@ -10,18 +10,26 @@
 <meta name="author" content="">
 <link rel="icon" href="../../favicon.ico">
 
-<title>Theme Template for Bootstrap</title>
+<title>좌석선택</title>
 
 <!-- Bootstrap core CSS -->
 <link href="board/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap theme -->
 <link href="board/css/bootstrap-theme.min.css" rel="stylesheet">
-
+<!-- CSS -->
+<link rel="stylesheet" href="assets/css/reset13.css">
+<link rel="stylesheet" href="assets/css/style13.css">
+<link rel="stylesheet" href="assets/css/swiper.css">
+<link rel="stylesheet" href="assets/css/font-awesome.css">
 <!-- Custom styles for this template -->
 <link href="theme.css" rel="stylesheet">
 <style type="text/css">
+body {
+	background-color: #f8f9fa;
+}
+
 .maindiv {
-	margin: 100px;
+	margin: 80px 170px 100px 300px;
 }
 
 .seconddiv {
@@ -31,16 +39,17 @@
 }
 
 .seatchoice {
-	overflow: hidden;
+	background-color: #fff; overflow : hidden;
 	position: relative;
 	width: 100%;
 	height: 452px;
 	border: 1px solid #d8d9db;
+	overflow: hidden;
 }
 
 .seatlayout {
-	width: 100%;
-	height: 270px;
+	width: 75%;
+	height: 250px;
 	margin: 40px 80px;
 }
 
@@ -74,10 +83,10 @@
 	overflow: hidden;
 	position: absolute;
 	left: 800px;
-	top: 150px;
+	top: 45px;
 	width: 310px;
 	height: 500px;
-	margin-left: 40px;
+	margin-left: 80px;
 	color: #fff;
 	background-color: #333;
 	border-radius: 7px;
@@ -97,25 +106,28 @@
 }
 
 .moreinfo {
-	padding: 5px 0 0 0;
+	padding: 5px 0 10px 0;
 	font-size: .8667em;
 	color: #aaa;
 	line-height: 1.1;
 }
-.theatername{
-    padding: 20px 0 0 28px;
+
+.theatername {
+	padding: 20px 0 10px 28px;
 	font-size: 10pt;
 	color: #aaa;
 	line-height: 1.1;
 }
-.movietime,.movieday{
- padding: 10px 0 0 28px;
+
+.movietime, .movieday {
+	padding: 10px 0 0 28px;
 	font-size: .9500em;
 	color: #aaa;
 	line-height: 1.1;
 }
-.chooseseat,.possibleseat,.finishseat{
-padding: 5px 0 0 0;
+
+.chooseseat, .possibleseat, .finishseat {
+	padding: 5px 0 9px 0;
 	font-size: .8600em;
 	color: #aaa;
 	line-height: 1.1;
@@ -151,7 +163,7 @@ padding: 5px 0 0 0;
 .innermovie {
 	overflow: hidden;
 	width: 100%;
-	padding: 1px 0 0 0;
+	padding: 1px 0 5px 0;
 	font-size: 1.0667em;
 	font-weight: 400;
 	line-height: 1.1;
@@ -159,7 +171,7 @@ padding: 5px 0 0 0;
 	text-overflow: ellipsis;
 }
 
-img {
+.movieimg {
 	position: absolute;
 	left: 68%;
 	top: 10px;
@@ -171,7 +183,7 @@ img {
 	overflow: hidden;
 	position: relative;
 	margin-left: 20px;
-	padding: 0 0 0 28px;
+	padding: 0 0 10px 28px;
 	border-bottom: 1px solid #434343;
 }
 
@@ -183,142 +195,179 @@ img {
 	font-size: .8667em;
 	border-bottom: 1px solid #434343;
 }
-.choiceseatbox{
-overflow: hidden;
-    position: relative;
-    min-height: 200px;
-    margin: 10px 0 0 20px;
-    border-radius: 5px;
-    border: 1px solid #434343;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+.choiceseatbox {
+	overflow: hidden;
+	position: relative;
+	min-height: 200px;
+	margin: 10px 0 0 20px;
+	border-radius: 5px;
+	border: 1px solid #434343;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
-.seatdefault{
-margin:25px 0 0 30px;
+
+.seatdefault {
+	margin: 25px 0 0 30px;
 }
-.myseatinfo{
-margin:25px 30px 0 0;
+
+.myseatinfo {
+	width: 105px;
+	margin: 25px 30px 0 0;
+	border-left: 1px solid #434343;
+	margin: 25px 30px 0 0;
 }
-.no{
-    display: block;
-    float: left;
-    width: 50%;
-    height: 40px;
-    margin: 0;
-    padding: 0;
-    font-size: 1.2em;
-    line-height: 40px;
-    text-align: center;
-    color: #fff!important;
-    border: 0;
-    border-radius: 0;
-    background-color: #53565b;
+
+.no {
+	display: block;
+	float: left;
+	width: 50%;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	font-size: 1.2em;
+	line-height: 40px;
+	text-align: center;
+	color: #fff !important;
+	border: 0;
+	border-radius: 0;
+	background-color: #53565b;
 }
-.yes{
-display: block;
-    float: right;
-    width: 50%;
-    height: 40px;
-    margin: 0;
-    padding: 0;
-    font-size: 1.2em;
-    text-align: center;
-    line-height: 40px;
-    color: #fff!important;
-    border: 0;
-    border-radius: 0;
-background-color:#329eb1;
+
+.yes {
+	display: block;
+	float: right;
+	width: 50%;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	font-size: 1.2em;
+	text-align: center;
+	line-height: 40px;
+	color: #fff !important;
+	border: 0;
+	border-radius: 0;
+	background-color: #329eb1;
 }
-.finishbutton{
-margin-top:40px;
+
+.finishbutton {
+	margin-top: 35px;
+}
+
+.onButton {
+	background-color: purple;
+}
+
+.chooseseatinfo {
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #aaa;
+	text-align: center;
 }
 </style>
-<script src="board/js/ie-emulation-modes-warning.js"></script>
+<script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
+<script src="board/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("button").on('click', function() {
+			$(this).addClass("onButton");
+			$(this).siblings("button").removeClass("onButton");
+			var htmlStr = $(this).attr("id");
+			console.log(this);
+			$(".chooseseatinfo").html(htmlStr);
+		});
+		$(".yes").on('click', function() {
+			$('#myModal').modal('show');
+		});
+		$(".clearbutton").on('click', function() {
+			$("button").removeClass("onButton");
+		});
+	});
+</script>
 </head>
 
 <body role="document">
-
-	<!-- Fixed navbar -->
-	<nav class="navbar navbar-inverse navbar-fixed-top"
-		style="background-color: purple">
+	<!-- //header -->
+	<header id="header">
 		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">WebTheater</a>
+			<div class="row">
+				<div class="header clearfix">
+					<h1>
+						<a href="#"> <em><img src="assets/img/teamlogo.png"
+								alt="teamlogo" onclick="location.href='mega292_13.html'"></em><br>
+							<strong><img src="assets/img/logo-sub.png"
+								alt="LIFE THEATER"></strong>
+						</a>
+					</h1>
+
+				</div>
 			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
-							<span class="caret"></span>
-					</a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li class="dropdown-header">Nav header</li>
-							<li><a href="#">Separated link</a></li>
-							<li><a href="#">One more separated link</a></li>
-						</ul></li>
-				</ul>
-			</div>
-			<!--/.nav-collapse -->
 		</div>
-	</nav>
+	</header>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel" style="font-size: 20ppx">예매정보확인</h4>
+				</div>
+				<div class="modal-body">예먜정보가 맞습니까?</div>
+				<p class="chooseseatinfo" style="font-size: 20px; height: 80px;"></p>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						onclick="location.href='mega292_13.html'">예매</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	<div class="container theme-showcase" role="main">
-
-		<!-- Main jumbotron for a primary marketing message or call to action -->
+	<section id="banner">
 		<div class="maindiv">
-			<h3 style="padding-bottom: 15px;">빠른예매</h3>
+			<h1 style="padding-bottom: 15px; font-weight: bold; font-size: 30px;">
+				빠른예매</h1>
 			<div class="selectbox">
 				<div class="movieinfo">
-				<div style="padding: 15px 20px 0 0;">
-					<span class="glyphicon glyphicon-heart" style="display:absolute; left:20px;top:20px; color:purple;"></span>
-					<div class="infoone">
-						<p class="innermovie">영화이름</p>
-						<p class="moreinfo">영화정보</p>
-					</div>
-					<div class="infotwo">
-						<p class="theatername">
-							영화관이름
-						</p>
-						<p class="movieday">
-							2020-11-07(토)
-						</p>
-						<p class="movietime">
-							1:00 ~ 3:00
-						</p>
-						<img src="img/1.jpg"></img>
-					</div>
-					<div class="choiceseatbox">
-					<div class="seatdefault">
-					<div style="width:15px;height:15px;background-color:purple;position:static"></div>
-					<p class="chooseseat">선택</p>
-					<div style="width:15px;height:15px;background-color:black;position:static"></div>
-					<p class="chooseseat">예매완료</p>
-					<div style="width:15px;height:15px;background-color:#e9ecef;position:static"></div>
-					<p class="chooseseat">가능한좌석</p>
-					</div>
-					<div class="myseatinfo">
-					<p class="moreinfo">선택좌석</p>
-					</div>
-					</div>
+					<div style="padding: 15px 20px 0 0;">
+						<span class="glyphicon glyphicon-heart"
+							style="display: absolute; left: 20px; top: 15px; color: purple;"></span>
+						<div class="infoone">
+							<p class="innermovie">영화이름</p>
+							<p class="moreinfo">영화정보</p>
+						</div>
+						<div class="infotwo">
+							<p class="theatername">영화관이름</p>
+							<p class="movieday">2020-11-07(토)</p>
+							<p class="movietime">1:00 ~ 3:00</p>
+							<img class="movieimg" src="img/1.jpg"></img>
+						</div>
+						<div class="choiceseatbox">
+							<div class="seatdefault">
+								<div
+									style="width: 15px; height: 15px; background-color: purple; position: static"></div>
+								<p class="chooseseat">선택</p>
+								<div
+									style="width: 15px; height: 15px; background-color: black; position: static"></div>
+								<p class="chooseseat">예매완료</p>
+								<div
+									style="width: 15px; height: 15px; background-color: #e9ecef; position: static"></div>
+								<p class="chooseseat">가능한좌석</p>
+							</div>
+							<div class="myseatinfo">
+								<p class="moreinfo" style="text-align: center">선택좌석</p>
+								<p class="chooseseatinfo" style="font-size: 20px"></p>
+							</div>
+						</div>
 					</div>
 					<div class="finishbutton">
-					<a class="no">취소</a>
-					<a class="yes">완료</a>
+						<a class="no">취소</a> <a class="yes">완료</a>
 					</div>
 				</div>
 				<div class="seconddiv">
@@ -327,82 +376,83 @@ margin-top:40px;
 						<button class="clearbutton">clear</button>
 					</div>
 					<div class="seatchoice">
-						<h3 style="text-align: center; margin-top: 60px">SCREEN</h3>
-						<div class="seatlayout">
-							A
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<br> B
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<br> C
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<br> D
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<br> E
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<br> F
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<button class="seat"></button>
-							<br>
-						</div>
+						<h1 style="text-align: center; margin-top: 60px">
+							SCREEN
+							</h3>
+							<div class="seatlayout">
+								A
+								<button class="seat" id="A1"></button>
+								<button class="seat" id="A2"></button>
+								<button class="seat" id="A3"></button>
+								<button class="seat" id="A4"></button>
+								<button class="seat" id="A5"></button>
+								<button class="seat" id="A6"></button>
+								<button class="seat" id="A7"></button>
+								<button class="seat" id="A8"></button>
+								<button class="seat" id="A9"></button>
+								<br> B
+								<button class="seat" id="B1"></button>
+								<button class="seat" id="B2"></button>
+								<button class="seat" id="B3"></button>
+								<button class="seat" id="B4"></button>
+								<button class="seat" id="B5"></button>
+								<button class="seat" id="B6"></button>
+								<button class="seat" id="B7"></button>
+								<button class="seat" id="B8"></button>
+								<button class="seat" id="B9"></button>
+								<br> C
+								<button class="seat" id="C1"></button>
+								<button class="seat" id="C2"></button>
+								<button class="seat" id="C3"></button>
+								<button class="seat" id="C4"></button>
+								<button class="seat" id="C5"></button>
+								<button class="seat" id="C6"></button>
+								<button class="seat" id="C7"></button>
+								<button class="seat" id="C8"></button>
+								<button class="seat" id="C9"></button>
+								<br> D
+								<button class="seat" id="D1"></button>
+								<button class="seat" id="D2"></button>
+								<button class="seat" id="D3"></button>
+								<button class="seat" id="D4"></button>
+								<button class="seat" id="D5"></button>
+								<button class="seat" id="D6"></button>
+								<button class="seat" id="D7"></button>
+								<button class="seat" id="D8"></button>
+								<button class="seat" id="D9"></button>
+								<br> E
+								<button class="seat" id="E1"></button>
+								<button class="seat" id="E2"></button>
+								<button class="seat" id="E3"></button>
+								<button class="seat" id="E4"></button>
+								<button class="seat" id="E5"></button>
+								<button class="seat" id="E6"></button>
+								<button class="seat" id="E7"></button>
+								<button class="seat" id="E8"></button>
+								<button class="seat" id="E9"></button>
+								<br> F
+								<button class="seat" id="F1"></button>
+								<button class="seat" id="F2"></button>
+								<button class="seat" id="F3"></button>
+								<button class="seat" id="F4"></button>
+								<button class="seat" id="F5"></button>
+								<button class="seat" id="F6"></button>
+								<button class="seat" id="F7"></button>
+								<button class="seat" id="F8"></button>
+								<button class="seat" id="F9"></button>
+								<br>
+							</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Bootstrap core JavaScript
+	</section>
+	<!-- Bootstrap core JavaScript
     ================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="../../dist/js/bootstrap.min.js"></script>
-		<script src="../../assets/js/docs.min.js"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../../dist/js/bootstrap.min.js"></script>
+	<script src="../../assets/js/docs.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

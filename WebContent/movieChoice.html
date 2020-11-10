@@ -13,7 +13,7 @@
 <title>빠른예매</title>
 
 <!-- Bootstrap core CSS -->
-<link href="board/css/bootstrap.min.css" rel="stylesheet">
+<link href="board/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <!-- Bootstrap theme -->
 <link href="board/css/bootstrap-theme.min.css" rel="stylesheet">
 <!-- CSS -->
@@ -25,11 +25,15 @@
 <!-- Custom styles for this template -->
 <link href="theme.css" rel="stylesheet">
 <style type="text/css">
+body{
+background-color :  #f8f9fa;
+}
 .maindiv {
 	margin: 80px 170px 100px 170px;
 }
 
 .movie-choice {
+background-color : #fff;
 	position: relative;
 	float: left;
 	width: 30%;
@@ -44,6 +48,7 @@
 }
 
 .theater-choice {
+background-color : #fff;
 	float: left;
 	width: 30%;
 	height: 400px;
@@ -52,6 +57,7 @@
 }
 
 .time-choice {
+background-color : #fff;
 	float: left;
 	width: 40%;
 	height: 400px;
@@ -67,6 +73,7 @@
 }
 
 .wrap {
+background-color : #fff;
 	height: 40px;
 	border-top: 1px solid #555;
 	border-left: 1px solid #d8d9db;
@@ -116,7 +123,6 @@ p {
 	padding: 3px 7px 3px 7px;
 	border: none;
 	text-align: left;
-	font-size: .8667em;
 	font-weight: bold;
 	background-color: transparent;
 	letter-spacing: 0;
@@ -131,7 +137,6 @@ p {
 	border: none;
 	text-align: left;
 	font-weight: bold;
-	font-size: .8667em;
 	background-color: transparent;
 	letter-spacing: 0;
 }
@@ -169,18 +174,32 @@ p {
 }
 </style>
 <script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
+<script src="board/js/bootstrap.min.js"></script>
 <script>
-	$(document).ready(function() {
-		$("button").on('click', function() {
-			$(this).addClass("onButton");
-			$(this).siblings("button").removeClass("onButton");
-		});
-	});
+	$(document)
+			.ready(
+					function() {
+						$("button")
+								.on(
+										'click',
+										function() {
+											$(this).addClass("onButton");
+											$(this).siblings("button")
+													.removeClass("onButton");
+											if (($(".day"))&& ($(".moviebutton")
+													.hasClass("onButton"))
+													&& ($(".theaterbutton")
+															.hasClass("onButton"))
+													&& ($(".timebutton")
+															.hasClass("onButton"))) {
+												$('#myModal').modal('show');
+											}
+										});
+					});
 </script>
 </head>
 
 <body role="document">
-
 	<!-- Fixed navbar -->
 	<header id="header">
 		<div class="container">
@@ -199,7 +218,26 @@ p {
 		</div>
 	</header>
 	<!-- //header -->
-
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel" style="font-size: 20ppx">예약정보확인</h4>
+				</div>
+				<div class="modal-body">예약정보가 맞습니까?</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.href='booking.html'">예매</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<section id="banner">
 		<!-- Main jumbotron for a primary marketing message or call to action -->
 		<div class="maindiv">
@@ -265,8 +303,6 @@ p {
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="../../dist/js/bootstrap.min.js"></script>
 	<script src="../../assets/js/docs.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

@@ -171,6 +171,7 @@ p {
 
 .onButton {
 	background-color: #e9ecef;
+	border-bottom: 3px solid purple;
 }
 </style>
 <script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
@@ -192,6 +193,12 @@ p {
 															.hasClass("onButton"))
 													&& ($(".timebutton")
 															.hasClass("onButton"))) {
+												var movie = $(".moviebutton").html();
+												var theater = $(".theaterbutton").html();
+												var time = $(".timebutton").html();
+												$(".modal-movie").html(movie);
+												$(".modal-theater").html(theater);
+												$(".modal-time").html(time);
 												$('#myModal').modal('show');
 											}
 										});
@@ -221,17 +228,21 @@ p {
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog" role="document" style="text-align:center; width:30%;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel" style="font-size: 20ppx">예약정보확인</h4>
+					<h4 class="modal-title" id="myModalLabel" style="font-size: 20px; font-weight:bold; margin-left:7px;">예약정보확인</h4>
 				</div>
-				<div class="modal-body">예약정보가 맞습니까?</div>
-				<div class="modal-footer">
+				<div class="modal-body">
+				<div class="modal-movie" style="font-size: 15px; font-weight: bold;"></div><br>
+				<div class="modal-theater" style="font-size: 15px; font-weight: bold;"></div> <br>
+				<div class="modal-time"></div><br>
+				</div>
+				<div class="modal-footer" style="display: flex; flex-direction: row; justify-content: center">
 				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.href='booking.html'">예매</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
 				</div>

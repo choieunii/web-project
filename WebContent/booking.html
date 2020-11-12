@@ -309,20 +309,24 @@ body {
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
+		<div class="modal-dialog" role="document" style="text-align:center; width:30%;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel" style="font-size: 20ppx">예매정보확인</h4>
+					<h4 class="modal-title" id="myModalLabel" style="font-size: 20px; font-weight:bold;">예매정보</h4>
 				</div>
-				<div class="modal-body">예먜정보가 맞습니까?</div>
-				<p class="chooseseatinfo" style="font-size: 20px; height: 80px;"></p>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal"
-						onclick="location.href='mega292_13.html'">예매</button>
+				<div class="modal-body">
+				영화이름: <br>
+				극장이름: <br>
+				시간:<br>
+				좌석:<br><br>
+				영화시작 10분전에 입장해주시길 바랍니다.<br>
+				</div>
+				<div class="modal-footer" style="display: flex; flex-direction: row; justify-content: center">
+				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.href='mega292_13.html'">예매</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
 				</div>
 			</div>

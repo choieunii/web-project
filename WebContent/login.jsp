@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>login</title>
+	<title>로그인</title>
 
 	<link rel="stylesheet" href="assets/css/reset19.css">
 	<link rel="stylesheet" href="assets/css/style19.css">
@@ -132,12 +132,12 @@
 			<div id="input_login">
 				<input id="id" type="text" placeholder="아이디"><br>
 				<input id="pw" type="password" placeholder="비밀번호"><br>
-				&nbsp;<input type="checkbox">아이디 저장하기<br><br>
+				&nbsp;<input type="checkbox"> 아이디 저장하기<br><br>
 				<input type="submit" value="로그인" id="login">
 				<br><br>
 				<small>&emsp;&emsp;&emsp;
-					<a href="findIdPw.html">ID/PW찾기</a>&emsp;
-					<a href="signIn.html">회원가입</a>&emsp;
+					<a href="findIdPw.jsp">ID/PW찾기</a>&emsp;
+					<a href="signIn.jsp">회원가입</a>&emsp;
 					<a href="">비회원 예매확인</a>
 				</small>
 			</div>

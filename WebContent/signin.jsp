@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>signIn</title>
+	<title>회원가입</title>
 
 	<link rel="stylesheet" href="assets/css/reset19.css">
 	<link rel="stylesheet" href="assets/css/style19.css">
@@ -109,13 +109,11 @@
 			padding: 5px;
 		}
 	</style>
-	
-	<script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
+
 	<script>
 		// 아이디 중복확인
 		// 확인 클릭 시 검토
 		function confirm_info() {
-			
 			
         }
 		// pass = "확인 되었습니다." fail= " --- 를 다시 확인해주세요 "
@@ -140,17 +138,6 @@
 									onclick="location.href='mega292_13.html'"></em><br>
 						</a>
 					</h1>
-                    <nav class="nav">
-                        <ul class="clearfix">
-                            <li><a href="#">영화</a></li>
-                            <li><a href="#">큐레이션</a></li>
-                            <li><a href="#">영화관</a></li>
-                            <li><a href="#">특별관</a></li>
-                            <li><a href="#">스토어</a></li>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">로그인</a></li>
-                        </ul>
-                    </nav>   
 				</div>
 			</div>
 		</div>
@@ -195,17 +182,19 @@
 		<h5>충무로영화관 서비스 이용을 위한 약관을 동의해주세요.</h5>
 		<br>
 		<div id="checks">
+		<form action="more.html" method="POST">
 			<input type="checkbox" id="all"> 필수항목 전체동의 <br>
 			<input type="checkbox" id="service"> 서비스 이용약관 동의(필수)
 			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
-			<input id="check" type="button" value="자세히보기" onClick="window.open('more.html')"> <br>
+			<input id="check" type="button" value="자세히보기" onClick="window.open('more.jsp')"> <br>
 			<input type="checkbox" id="personal"> 개인정보 수집 및 이용동의(필수)
 			&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-			<input id="check" type="button" value="자세히보기" onClick="window.open('more.html')"> <br>
+			<input id="check" type="button" value="자세히보기" onClick="window.open('more.jsp')"> <br>
 			<input type="checkbox" id="marketing"> 마케팅 활용을 위한 개인정보 수집 이용
 			&emsp;&emsp;&emsp;
-			<input id="check" type="button" value="자세히보기" onClick="window.open('more.html')"> <br>
+			<input id="check" type="button" value="자세히보기" onClick="window.open('more.jsp')"> <br>
 		</div>
+	</form>
 		<br><br>
 		<input type="submit" id="find_s" value="회원가입">
 

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>findIdPw</title>
+	<title>아이디/비밀번호 찾기</title>
 
 	<link rel="stylesheet" href="assets/css/reset19.css">
 	<link rel="stylesheet" href="assets/css/style19.css">
@@ -117,17 +117,6 @@
 									onclick="location.href='mega292_13.html'"></em><br>
 						</a>
 					</h1>
-                    <nav class="nav">
-                        <ul class="clearfix">
-                            <li><a href="#">영화</a></li>
-                            <li><a href="#">큐레이션</a></li>
-                            <li><a href="#">영화관</a></li>
-                            <li><a href="#">특별관</a></li>
-                            <li><a href="#">스토어</a></li>
-                            <li><a href="#">이벤트</a></li>
-                            <li><a href="#">로그인</a></li>
-                        </ul>
-                    </nav>   
 				</div>
 			</div>
 		</div>

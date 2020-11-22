@@ -144,11 +144,11 @@
 			<img id="close" src="assets/img/close.svg" onclick="window.close()">
 		</div>
 		<div id="body_l">
-		<form action="login-db.jsp" method="">
+		<form action="login-db.jsp" method="post">
 			<div id="input_login">
 				<input id="id" type="text" placeholder="아이디"><br>
 				<input id="pw" type="password" placeholder="비밀번호"><br>
-				&nbsp;<input type="checkbox"> 아이디 저장하기<br><br>
+				&nbsp;<input type="checkbox" id="check"> 아이디 저장하기<br><br>
 				<input type="submit" value="로그인" id="login">
 		
 				<br><br>

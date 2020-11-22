@@ -90,7 +90,7 @@ td {
 	font-size: 14px;
 }
 
-#find_s {
+#find_s, #find_c {
 	margin-top: 20px;
 	margin-left: 315px;
 	width: 150px;
@@ -204,7 +204,7 @@ function idCheck(){
 					</tr>
 				</table>
 				<br>
-				<button id="find_s" onclick="checkValue()">확인</button>
+				<button id="find_c" onclick="checkValue()">확인</button>
 			</div>
 			<br> <br>
 			<h3>2. 약관동의 및 정보활용동의</h3>

@@ -49,9 +49,11 @@
 															.hasClass("onButton"))
 													&& ($(".timebutton")
 															.hasClass("onButton"))) {
+												var date = $(".day.onButton").html();
 											    var movie = $(".moviebutton.onButton").html();
 												var theater = $(".theaterbutton.onButton").html();
 												var time = $(".timebutton.onButton").html();
+												$(".modal-date").html(date);
 												$(".modal-movie").html(movie);
 												$(".modal-theater").html(theater);
 												$(".modal-time").html(time);
@@ -63,10 +65,14 @@
 		var movie = $(".modal-movie").html();
 		var theater = $(".modal-theater").html();
 		var time = $(".modal-time").html();
-		$("#movie").val(movie);
-		$("#theater").val(theater);
-		$("#time").val(time);
-		$('#booking').submit();
+		var date = $(".modal-date").html();
+		$("#inputdate").val(date);
+		$("#inputmovie").val(movie);
+		$("#inputtheater").val(theater);
+		$("#inputtime").val(time);
+		var movieid= $(".moviebutton.onButton").attr("id");
+		$("#inputid").val(movieid)
+		$("#booking").submit();
 	}
 </script>
 </head>
@@ -106,6 +112,9 @@
 						style="font-size: 20px; font-weight: bold; margin-left: 7px;">예약정보확인</h4>
 				</div>
 				<div class="modal-body">
+				<div class="modal-date"
+						style="font-size: 15px; font-weight: bold;"></div>
+					<br>
 					<div class="modal-movie"
 						style="font-size: 15px; font-weight: bold;"></div>
 					<br>
@@ -114,14 +123,16 @@
 					<br>
 					<div class="modal-time"></div>
 					<br>
-					<input id="movie" type="hidden"/>
-					<input id="theater" type="hidden"/>
-					<input id="time" type="hidden"/> 
+					<input id="inputdate" name="date" type="hidden"/>
+					<input id="inputmovie" name="movie" type="hidden"/>
+					<input id="inputtheater" name="theater" type="hidden"/>
+					<input id="inputtime" name="time" type="hidden"/> 
+					<input id="inputid" name="movieid" type="hidden"/>
 					선택하신 정보가 맞습니까?
 				</div>
 				<div class="modal-footer"
 					style="display: flex; flex-direction: row; justify-content: center">
-					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="submitaction()">예매</button>
+					<input type="submit" class="btn btn-primary" data-dismiss="modal" onclick="submitaction()" value="예매"></button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
 				</div>
 			</div>
@@ -135,7 +146,7 @@
 		String moviename;
 		String theatername;
 		String time;
-		int i=0, j=0, k = 0;
+		String i=null, j=null, k = null;
 		Connection conn = null;
 		Statement stmt1 = null;
 		Statement stmt2 = null;
@@ -154,9 +165,9 @@
 			stmt1 = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			stmt2 = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			stmt3 = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			sql_movie = "select moviename from movie";
-			sql_theater = "select theatername from theater";
-			sql_time = "select time from time";
+			sql_movie = "select * from movie";
+			sql_theater = "select * from theater";
+			sql_time = "select * from time";
 			movie_rs = stmt1.executeQuery(sql_movie);
 			theater_rs = stmt2.executeQuery(sql_theater);
 			time_rs = stmt3.executeQuery(sql_time);
@@ -194,7 +205,7 @@
 							<%
 								while (movie_rs.next()) {
 								moviename = movie_rs.getString("moviename");
-								i++;
+								i=movie_rs.getString("movieid");
 							%>
 							<button type="button" class="moviebutton" id="<%=i%>"><%=moviename%></button>
 							<%
@@ -208,7 +219,7 @@
 							<%
 								while (theater_rs.next()) {
 								theatername = theater_rs.getString("theatername");
-								j++;
+								j=theater_rs.getString("theaterid");
 							%>
 							<button type="button" class="theaterbutton" id="<%=j %>"><%=theatername%></button>
 							<%
@@ -221,11 +232,13 @@
 						<div class="time-area">
 							<div class="list-area">
 								<%
-									String DBtime;
+									String DBstart;
+								String DBfinish;
 								while (time_rs.next()) {
-									DBtime = time_rs.getString("time");
-									time = DBtime.substring(0, 5);
-									k++;
+									DBstart = time_rs.getString("time");
+									DBfinish = time_rs.getString("finishtime");
+									time = DBstart.substring(0, 5)+"~"+ DBfinish.substring(0,5);
+									k=time_rs.getString("timeid");
 								%>
 								<button type="button" class="timebutton" id="<%=k%>">
 									<p><%=time%></p>

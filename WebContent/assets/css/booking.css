@@ -3,7 +3,7 @@ body {
 }
 
 .maindiv {
-	margin: 80px 170px 100px 300px;
+	margin: 70px 170px 170px 270px;
 }
 
 .seconddiv {
@@ -61,7 +61,7 @@ body {
 	top: 45px;
 	width: 310px;
 	height: 500px;
-	margin-left: 80px;
+	margin-left: 70px;
 	color: #fff;
 	background-color: #333;
 	border-radius: 7px;

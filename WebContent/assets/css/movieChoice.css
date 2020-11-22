@@ -3,7 +3,7 @@ body {
 }
 
 .maindiv {
-	margin: 80px 170px 100px 170px;
+	margin: 70px 170px 170px 170px;
 }
 
 .movie-choice {
@@ -11,7 +11,7 @@ body {
 	position: relative;
 	float: left;
 	width: 30%;
-	height: 400px;
+	height: 430px;
 	padding: 0 20px 17px 20px;
 	border: 1px solid #d8d9db;
 }
@@ -25,7 +25,7 @@ body {
 	background-color: #fff;
 	float: left;
 	width: 30%;
-	height: 400px;
+	height: 430px;
 	padding: 0 20px 20px 20px;
 	border: 1px solid #d8d9db;
 }
@@ -34,7 +34,7 @@ body {
 	background-color: #fff;
 	float: left;
 	width: 40%;
-	height: 400px;
+	height: 430px;
 	padding: 0 20px 20px 20px;
 	border: 1px solid #d8d9db;
 }
@@ -43,7 +43,7 @@ body {
 	position: relative;
 	width: 100%;
 	margin: 0;
-	padding: 10px 0 0 0;
+	padding: 0 0 0 0;
 }
 
 .wrap {
@@ -74,7 +74,7 @@ p {
 	background-color: transparent;
 	float: center;
 	border-bottom: 3px solid transparent;
-	font-weight: 400;
+	font-weight: bold;
 }
 
 .day:hover {
@@ -86,10 +86,10 @@ p {
 	position: relative;
 	width: 100%;
 	margin: 0;
-	padding: 10px 0 0 0;
+	padding: 8px 0 0 0;
 }
 
-.moviebutton {
+.moviebutton, .theaterbutton, .timebutton {
 	display: block;
 	position: relative;
 	width: 100%;
@@ -97,33 +97,7 @@ p {
 	padding: 3px 7px 3px 7px;
 	border: none;
 	text-align: left;
-	font-weight: bold;
-	background-color: transparent;
-	letter-spacing: 0;
-}
-
-.theaterbutton {
-	display: block;
-	position: relative;
-	width: 100%;
-	min-height: 35px;
-	padding: 3px 7px 3px 7px;
-	border: none;
-	text-align: left;
-	font-weight: bold;
-	background-color: transparent;
-	letter-spacing: 0;
-}
-
-.timebutton {
-	display: block;
-	position: relative;
-	width: 100%;
-	min-height: 28px;
-	padding: 3px 7px 3px 7px;
-	border: none;
-	text-align: left;
-	font-size: .8667em;
+	font-size: 13px;
 	background-color: transparent;
 	letter-spacing: 0;
 }
@@ -146,4 +120,5 @@ p {
 .onButton {
 	background-color: #e9ecef;
 	border-bottom: 3px solid purple;
+	font-weight: bold;
 }

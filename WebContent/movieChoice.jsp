@@ -1,4 +1,9 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="utf-8"%>
+<%@ page import="java.sql.*"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,156 +29,7 @@
 
 <!-- Custom styles for this template -->
 <link href="theme.css" rel="stylesheet">
-<style type="text/css">
-body{
-background-color :  #f8f9fa;
-}
-.maindiv {
-	margin: 80px 170px 100px 170px;
-}
-
-.movie-choice {
-background-color : #fff;
-	position: relative;
-	float: left;
-	width: 30%;
-	height: 400px;
-	padding: 0 20px 17px 20px;
-	border: 1px solid #d8d9db;
-}
-
-.quick-reserve-area {
-	border: 1px solid #d8d9db;
-	border-top: 0;
-}
-
-.theater-choice {
-background-color : #fff;
-	float: left;
-	width: 30%;
-	height: 400px;
-	padding: 0 20px 20px 20px;
-	border: 1px solid #d8d9db;
-}
-
-.time-choice {
-background-color : #fff;
-	float: left;
-	width: 40%;
-	height: 400px;
-	padding: 0 20px 20px 20px;
-	border: 1px solid #d8d9db;
-}
-
-.time-area {
-	position: relative;
-	width: 100%;
-	margin: 0;
-	padding: 10px 0 0 0;
-}
-
-.wrap {
-background-color : #fff;
-	height: 40px;
-	border-top: 1px solid #555;
-	border-left: 1px solid #d8d9db;
-	border-right: 1px solid #d8d9db;
-}
-
-p {
-	overflow: hidden;
-	display: block;
-	width: 100%;
-	height: 38px;
-	margin: 0;
-	padding: 0;
-	color: #222;
-	font-size: 13pt;
-	line-height: 38px;
-	font-weight: bold;
-}
-
-.day {
-	width: 12%;
-	height: 40px;
-	border: 0;
-	background-color: transparent;
-	float: center;
-	border-bottom: 3px solid transparent;
-	font-weight: 400;
-}
-
-.day:hover {
-	background-color: #e9ecef;
-	border-bottom: 3px solid purple;
-}
-
-.list-area {
-	position: relative;
-	width: 100%;
-	margin: 0;
-	padding: 10px 0 0 0;
-}
-
-.moviebutton {
-	display: block;
-	position: relative;
-	width: 100%;
-	min-height: 35px;
-	padding: 3px 7px 3px 7px;
-	border: none;
-	text-align: left;
-	font-weight: bold;
-	background-color: transparent;
-	letter-spacing: 0;
-}
-
-.theaterbutton {
-	display: block;
-	position: relative;
-	width: 100%;
-	min-height: 35px;
-	padding: 3px 7px 3px 7px;
-	border: none;
-	text-align: left;
-	font-weight: bold;
-	background-color: transparent;
-	letter-spacing: 0;
-}
-
-.timebutton {
-	display: block;
-	position: relative;
-	width: 100%;
-	min-height: 28px;
-	padding: 3px 7px 3px 7px;
-	border: none;
-	text-align: left;
-	font-size: .8667em;
-	background-color: transparent;
-	letter-spacing: 0;
-}
-
-.moviebutton:hover {
-	background-color: #e9ecef;
-	border-bottom: 3px solid purple;
-}
-
-.theaterbutton:hover {
-	background-color: #e9ecef;
-	border-bottom: 3px solid purple;
-}
-
-.timebutton:hover {
-	background-color: #e9ecef;
-	border-bottom: 3px solid purple;
-}
-
-.onButton {
-	background-color: #e9ecef;
-	border-bottom: 3px solid purple;
-}
-</style>
+<link href="assets/css/movieChoice.css" type="text/css" rel="stylesheet">
 <script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
 <script src="board/js/bootstrap.min.js"></script>
 <script>
@@ -228,22 +84,31 @@ p {
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document" style="text-align:center; width:30%;">
+		<div class="modal-dialog" role="document"
+			style="text-align: center; width: 30%;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel" style="font-size: 20px; font-weight:bold; margin-left:7px;">예약정보확인</h4>
+					<h4 class="modal-title" id="myModalLabel"
+						style="font-size: 20px; font-weight: bold; margin-left: 7px;">예약정보확인</h4>
 				</div>
 				<div class="modal-body">
-				<div class="modal-movie" style="font-size: 15px; font-weight: bold;"></div><br>
-				<div class="modal-theater" style="font-size: 15px; font-weight: bold;"></div> <br>
-				<div class="modal-time"></div><br>
+					<div class="modal-movie"
+						style="font-size: 15px; font-weight: bold;"></div>
+					<br>
+					<div class="modal-theater"
+						style="font-size: 15px; font-weight: bold;"></div>
+					<br>
+					<div class="modal-time"></div>
+					<br>
 				</div>
-				<div class="modal-footer" style="display: flex; flex-direction: row; justify-content: center">
-				<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.href='booking.html'">예매</button>
+				<div class="modal-footer"
+					style="display: flex; flex-direction: row; justify-content: center">
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						onclick="location.href='booking.html'">예매</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
 				</div>
 			</div>

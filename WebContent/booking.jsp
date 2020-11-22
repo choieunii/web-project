@@ -49,7 +49,39 @@
 	});
 </script>
 </head>
+<%
+	int finish = 0;
+String finishtime = "";
+String movie = request.getParameter("movie");
+String theater = request.getParameter("theater");
+String time = request.getParameter("time");
+String getdate = request.getParameter("date");
+int movieid = Integer.parseInt(request.getParameter("movieid"));
+String month = getdate.substring(0, 2);
+String day = getdate.substring(3, 5);
+String wday = getdate.substring(5, 6);
+String date = "2020-" + month + "-" + day + wday;
+String img = "";
 
+Connection conn = null;
+Statement stmt = null;
+ResultSet rs = null;
+String sql_img;
+
+try {
+	Class.forName("com.mysql.jdbc.Driver");
+	String url = "jdbc:mysql://localhost:3306/web?serverTimezone=UTC";
+	conn = DriverManager.getConnection(url, "root", "0000");
+	stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	sql_img = "select img from movie where movieid="+movieid;
+	rs = stmt.executeQuery(sql_img);
+} catch (Exception e) {
+	out.println("DB 연동 오류 입니다.:" + e.getMessage());
+}
+while (rs.next()) {
+	img=rs.getString("img");
+	}
+%>
 <body role="document">
 	<!-- //header -->
 	<header id="header">
@@ -58,7 +90,7 @@
 				<div class="header clearfix">
 					<h1>
 						<a href="#"> <em><img src="assets/img/teamlogo.png"
-								alt="teamlogo" onclick="location.href='mega292_13.html'"></em><br>
+								alt="teamlogo" onclick="location.href='main.html'"></em><br>
 							<strong><img src="assets/img/logo-sub.png"
 								alt="LIFE THEATER"></strong>
 						</a>
@@ -83,13 +115,16 @@
 						style="font-size: 20px; font-weight: bold;">예매정보</h4>
 				</div>
 				<div class="modal-body">
-					영화이름: <br> 극장이름: <br> 시간:<br> 좌석:<br> <br>
+					영화이름:
+					<%=movie%>
+					<br> 극장이름:<%=theater%>
+					<br> 시간:<%=time%><br> 좌석:<br> <br>
 					영화시작 10분전에 입장해주시길 바랍니다.<br>
 				</div>
 				<div class="modal-footer"
 					style="display: flex; flex-direction: row; justify-content: center">
 					<button type="button" class="btn btn-primary" data-dismiss="modal"
-						onclick="location.href='mega292_13.html'">예매</button>
+						onclick="location.href='main.html'">예매</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
 				</div>
 			</div>
@@ -106,15 +141,15 @@
 						<span class="glyphicon glyphicon-heart"
 							style="display: absolute; left: 20px; top: 15px; color: purple;"></span>
 						<div class="infoone">
-							<p class="innermovie">영화이름</p>
-							<p class="moreinfo">영화정보</p>
+							<p class="innermovie"><%=movie%></p>
+							<p class="moreinfo">2D 상영관 B145</p>
 						</div>
 						<div class="infotwo">
-							<p class="theatername">영화관이름</p>
-							<p class="movieday">2020-11-07(토)</p>
-							<p class="movietime">1:00 ~ 3:00</p>
-							<img class="movieimg" src="img/1.jpg"></img>
+							<p class="theatername"><%=theater%></p>
+							<p class="movieday"><%=date%></p>
+							<p class="movietime"><%=time%></p>
 						</div>
+						<img class="movieimg" src="assets/img/<%=img %>.jpg"></img>
 						<div class="choiceseatbox">
 							<div class="seatdefault">
 								<div

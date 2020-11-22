@@ -148,10 +148,10 @@ body {
 
 .movieimg {
 	position: absolute;
-	left: 68%;
-	top: 10px;
-	width: 70px;
-	height: 100px;
+	left: 55%;
+	top: 35px;
+	width: 110px;
+	height: 160px;
 }
 
 .infoone {
@@ -159,6 +159,7 @@ body {
 	position: relative;
 	margin-left: 20px;
 	padding: 0 0 10px 28px;
+	width: 130px;
 	border-bottom: 1px solid #434343;
 }
 

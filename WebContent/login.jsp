@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -52,6 +54,15 @@ h5 {
 	color: white;
 	background: #3a0e6a;
 }
+		#title #close{
+			background: #3a0e6a;
+			width: auto;
+			height: auto;
+			max-height: 17px;
+			max-width: 17px;
+			position: relative;
+			left: 525px;			
+		}
 
 #input_login {
 	position: relative;
@@ -125,9 +136,14 @@ h5 {
 		</div>
 	</header>
 	<br>
+	
 	<div id="box">
-		<div id="title">&nbsp;&nbsp;로그인</div>
+		<div id="title">
+			&nbsp;&nbsp;로그인	
+			<img id="close" src="assets/img/close.svg" onclick="window.close()">
+		</div>
 		<div id="body_l">
+		<form action="login-db.jsp" method="post">
 			<div id="input_login">
 				<input id="id" type="text" placeholder="아이디"><br>
 				<input id="pw" type="password" placeholder="비밀번호"><br>
@@ -138,6 +154,7 @@ h5 {
 					<a href="">비회원 예매확인</a>
 				</small>
 			</div>
+		</form>
 			<div id="poster">
 				<img class="slide"
 					src="https://img.megabox.co.kr/SharedImg/2020/10/14/0XKJAjlb4CrG96RLtjYASyiqOgfaWdcc_420.jpg">
@@ -145,6 +162,7 @@ h5 {
 					src="https://img.megabox.co.kr/SharedImg/2020/11/12/k76XsiG5cwzZg964MFa11N3Rb7zsfA8j_420.jpg">
 				<img class="slide"
 					src="https://img.megabox.co.kr/SharedImg/2020/11/10/ynRbb1JP8iV5HvEvLGiEdDRXtpYgu0Ul_420.jpg">
+			</div>
 			</div>
 		</div>
 </body>

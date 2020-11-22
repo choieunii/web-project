@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -136,10 +138,16 @@ td {
 					placeholder="생년월일 8자리"></td>
 			</tr>
 			<tr>
+<<<<<<< HEAD
 				<th>휴대폰번호</th>
 				<td><input type="text" name="number"
 					placeholder=" - 없이 입력"> &emsp;
 					<button id="check">인증요청</button></td>
+=======
+				<th>이메일</th>
+				<td><input type="text" name="email" placeholder="이메일 주소 입력">
+					&emsp;<button id="check">인증요청</button></td>
+>>>>>>> branch 'maiin' of https://github.com/choieunii/webproject.git
 			</tr>
 			<tr>
 				<th>인증번호</th>

@@ -2,10 +2,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta charset="UTF-8">
 <title>로그인</title>
 
 <link rel="stylesheet" href="assets/css/reset19.css">
@@ -116,8 +114,15 @@ h5 {
 				x[slideIndex - 1].style.display = "block";
 				setTimeout(poster_slide, 2500); // Change image every 2 seconds
 			}
+			
 		});
 	</script>
+	
+<%
+String errMsg = (String)request.getAttribute("errMsg") ;
+if(errMsg == null)
+	errMsg = " ";
+%>
 </head>
 
 <body>
@@ -140,17 +145,18 @@ h5 {
 	<div id="box">
 		<div id="title">
 			&nbsp;&nbsp;로그인	
-			<img id="close" src="assets/img/close.svg" onclick="window.close()">
+			<img id="close" src="assets/img/close.svg">
 		</div>
 		<div id="body_l">
 		<form action="login-db.jsp" method="post">
 			<div id="input_login">
 				<input id="id" type="text" placeholder="아이디"><br>
-				<input id="pw" type="password" placeholder="비밀번호"><br>
+				<input id="pw" type="password" placeholder="비밀번호""><br>
+				<div><%=errMsg%></div>
 				&nbsp;<input type="checkbox"> 아이디 저장하기<br>
 				<br> <input type="submit" value="로그인" id="login">
-				<br> <br> <small>&emsp;&emsp;&emsp; <a
-					href="findIdPw.jsp">ID/PW찾기</a>&emsp; <a href="signIn.jsp">회원가입</a>&emsp;
+				<br> <br> <small>&emsp;&emsp;
+				<a href="findIdPw.jsp">ID/PW찾기</a>&emsp; <a href="signin.jsp">회원가입</a>&emsp;
 					<a href="">비회원 예매확인</a>
 				</small>
 			</div>

@@ -30,7 +30,7 @@ h5 {
 
 #box_s {
 	margin: auto;
-	height: 1000px;
+	height: 900px;
 	width: 750px;
 	border-width: 1px;
 	border-style: solid;
@@ -91,14 +91,13 @@ td {
 }
 
 #find_s {
-	margin-top: 20px;
-	margin-left: 315px;
-	width: 150px;
+	width: 100px;
+	margin-left: 20px;
 	border-width: 0px;
 	border-radius: 5px;
-	font-size: 15px;
+	font-size: 13px;
 	font-style: bold;
-	padding: 10px;
+	padding: 7px;
 }
 
 #check {
@@ -110,22 +109,69 @@ td {
 	padding: 5px;
 }
 </style>
+<script type="text/javascript">
+function checkid(){
+	/*아이디 중복 확인*/
+}
+ function send(){
+    if(document.box_s.f.body1_s.name.value == ""){
+        alert("이름을 입력하세요");
+        document.box_s.f.body1_s.name.focus();
+        return;
+    }
+   
+    if(document.box_s.f.body1_s.birth.value == ""){
+        alert("생년월일을 입력하세요");
+        document.box_s.f.body1_s.birth.focus();
+        return;
+    }else if(document.box_s.f.body1_s.birth.value.length() != 8){
+        alert("생년월일 8자리를 입력하세요");
+        document.box_s.f.body1_s.birth.focus();
+        return;
+    }
+    
+    if(document.box_s.f.body1_s.id.value == ""){
+        alert("아이디를 입력하세요");
+        document.box_s.f.body1_s.id.focus();
+        return;
+    }
+    /*else if (document.f.body1_s.id.value 영문숫자조합이 아닐 때){
+	    alert("아이디 형식이 맞지 않습니다.");
+	}*/
+    if(document.box_s.f.body1_s.pw.value == ""){
+        alert("패스워드를 입력하세요");
+        document.box_s.f.body1_s.pw.focus();
+        return;
+    } else if (document.box_s.f.body1_s.pw.value != document.box_s.f..body1_s.pw_ch.value){
+        alert("암호가 일치하지 않습니다. 다시 입력하세요");
+        document.box_s.f.body1_s.pw.value = "";
+        document.box_s.f.body1_s.pw_ch.value = "";
+        document.box_s.f.body1_s.pw_ch.focus();
+        return;
+    }
+    /*else if (document.f.body1_s.ㅔㅈ.value 영문숫자특수기호조합이 아닐 때){
+    	alert("비밀번호 형식이 맞지 않습니다.");
+	}*/
+    
+    if(document.box_s.f.body1_s.email.value == ""){
+        alert("이메일을 입력하세요");
+        document.box_s.f.body1_s.email.focus();
+        return;
+    } 
+    /*else if (document.f.body1_s.email.value == ""){
+        alert("이메일 형식이 맞지 않습니다.");
+        document.f.body1_s.email.value == ""
+        document.f.body1_s.email.focus();
+        return;
+    }*/
 
-<script>
-		// 아이디 중복확인
-		// 확인 클릭 시 검토
-		function confirm_info() {
-			
-        }
-		// pass = "확인 되었습니다." fail= " --- 를 다시 확인해주세요 "
-		// 		비밀번호, 비밀번호 확인 일치 여부
-		// 		이메일주소 형식
-		// 		생년월일 8자리
-		// 필수항목 전체 동의 기능
-		// 회원가입 시, 이미 위에서 정보는 확인했으니까
-		// 필수항목 체크여부만 확인
-		// 회원가입 - db에 정보 추가
-	</script>
+    //요청 URL
+    document.box_s.f.action = "signin-db.jsp";
+
+    //서버쪽에 보내기
+    document.box_s.f.submit();
+}
+</script>
 </head>
 
 <body>
@@ -144,6 +190,7 @@ td {
 	</header>
 	<br>
 	<div id="box_s">
+	<form id="f" method="post">
 		<div id="title_s">&nbsp;&nbsp;회 원 가 입</div>
 		<h3>1. 회원정보 입력</h3>
 		<h5>회원정보를 입력해주세요.</h5>
@@ -155,14 +202,12 @@ td {
 				</tr>
 				<tr>
 					<th>생년월일</th>
-					<td><input type="text" name="birth"
-						placeholder="생년월일 8자리"></td>
+					<td><input type="text" name="birth" placeholder="생년월일 8자리"></td>
 				</tr>
 				<tr>
 					<th>아이디</th>
-					<td><input type="text" name="id"
-						placeholder="영문, 숫자 조합 (8-12자) "> &emsp;
-						<button id="check">중복확인</button></td>
+					<td><input type="text" name="id" placeholder="영문, 숫자 조합 (8-12자) "> &emsp;
+						<button id="check" onclick="checkid()">중복확인</button></td>
 				</tr>
 				<tr>
 					<th>비밀번호</th>
@@ -176,37 +221,31 @@ td {
 				</tr>
 				<tr>
 					<th>이메일 주소</th>
-					<td><input type="text" name="pw_ch"
+					<td><input type="text" name="email"
 						placeholder="이메일 주소를 입력해주세요. ">
 				</tr>
 			</table>
-			<br> <input type="submit" id="find_s" value="확인">
+			<br> 
 		</div>
+		
 		<h3>2. 약관동의 및 정보활용동의</h3>
-		<h5>충무로영화관 서비스 이용을 위한 약관을
-			동의해주세요.</h5>
+		<h5>
+			충무로영화관 서비스 이용을 위한 약관을	동의해주세요.&emsp;
+			<button id="check" onClick="window.open('more.jsp')">자세히보기</button><br> 
+		</h5>
 		<br>
 		<div id="checks">
-			<form action="more.html" method="POST">
 				<input type="checkbox" id="all"> 필수항목 전체동의 <br>
-				<input type="checkbox" id="service"> 서비스 이용약관
-				동의(필수)
-				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; <input
-					id="check" type="button" value="자세히보기"
-					onClick="window.open('more.jsp')"> <br> <input
-					type="checkbox" id="personal"> 개인정보 수집 및
-				이용동의(필수) &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <input
-					id="check" type="button" value="자세히보기"
-					onClick="window.open('more.jsp')"> <br> <input
-					type="checkbox" id="marketing"> 마케팅 활용을 위한
-				개인정보 수집 이용 &emsp;&emsp;&emsp; <input id="check"
-					type="button" value="자세히보기"
-					onClick="window.open('more.jsp')"> <br>
+				<input type="checkbox" id="service"> 서비스 이용약관동의(필수)<br>
+				<input type="checkbox" id="personal"> 개인정보 수집 및 이용동의(필수)<br> 
+				<input type="checkbox" id="marketing"> 마케팅 활용을 위한 개인정보 수집 이용<br>
 		</div>
-		</form>
-		<br> <br> <input type="submit" id="find_s"
-			value="회원가입">
-
+		<br><br>
+		&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+		&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+		<input type="submit" id="find_s" value="회원가입" onclick="send()">
+		<input type="reset" id="find_s" value="취소">
+	</form>
 	</div>
 
 </body>

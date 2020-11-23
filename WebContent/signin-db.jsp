@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%@ page import="db.DButil" %>
 <%request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -15,7 +14,6 @@ String birth = request.getParameter("birth");
 String id = request.getParameter("id");
 String pw = request.getParameter("pw");
 String email = request.getParameter("email");
-
 
 Connection conn = null;
 PreparedStatement pstmt = null;
@@ -38,8 +36,10 @@ catch(Exception e){
 	System.out.println("DB 연동 오류입니다 : " + e.getMessage());
 }
 
-DButil.close(pstmt);
-DButil.close(conn);
+pstmt.close();
+conn.close();
+
+response.sendRedirect("movie_board_main.html");
 %>
 </body>
 </html>

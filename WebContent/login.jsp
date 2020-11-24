@@ -93,6 +93,10 @@ h5 {
 	height: 295px;
 	object-fit: contain;
 }
+#error{
+color: red;
+font-size: 10px;
+}
 </style>
 
 <script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
@@ -150,14 +154,15 @@ if(errMsg == null)
 		<div id="body_l">
 		<form action="login-db.jsp" method="post">
 			<div id="input_login">
-				<input id="id" type="text" placeholder="아이디"><br>
-				<input id="pw" type="password" placeholder="비밀번호""><br>
-				<div><%=errMsg%></div>
+				<input name="id" id="id" type="text" placeholder="아이디"><br>
+				<input name="pw" id="pw" type="password" placeholder="비밀번호"><br>
+				<div id="error"><%=errMsg%></div>
 				&nbsp;<input type="checkbox"> 아이디 저장하기<br>
 				<br> <input type="submit" value="로그인" id="login">
 				<br> <br> <small>&emsp;&emsp;
-				<a href="findIdPw.jsp">ID/PW찾기</a>&emsp; <a href="signin.jsp">회원가입</a>&emsp;
-					<a href="">비회원 예매확인</a>
+				<a href="findIdPw.jsp">ID/PW찾기</a>&emsp; 
+				<a href="signin.jsp">회원가입</a>&emsp;
+				<a href="">비회원 예매확인</a>
 				</small>
 			</div>
 		</form>
@@ -172,5 +177,4 @@ if(errMsg == null)
 			</div>
 		</div>
 </body>
-
 </html>

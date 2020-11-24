@@ -59,6 +59,10 @@ h5 {
 	width: 500px;
 	font-size: 13px;
 }
+#body1_s input{
+	border: 0px;
+	width: 60%;
+}
 
 th, td {
 	padding: 7px;
@@ -72,12 +76,6 @@ th {
 td {
 	background: white;
 	border: 1px solid rgb(190, 190, 190);
-}
-
-#body1_s input {
-	height: 25px;
-	width: 250px;
-	border-width: 0px;
 }
 
 #checks {
@@ -113,67 +111,75 @@ td {
 function checkid(){
 	/*아이디 중복 확인*/
 }
- function send(){
-    if(document.box_s.f.body1_s.name.value == ""){
-        alert("이름을 입력하세요");
-        document.box_s.f.body1_s.name.focus();
-        return;
-    }
-   
-    if(document.box_s.f.body1_s.birth.value == ""){
-        alert("생년월일을 입력하세요");
-        document.box_s.f.body1_s.birth.focus();
-        return;
-    }else if(document.box_s.f.body1_s.birth.value.length() != 8){
-        alert("생년월일 8자리를 입력하세요");
-        document.box_s.f.body1_s.birth.focus();
-        return;
+function login() {
+    const form = document.getElementById("signin_form");
+
+    if (getElementById("name") == "") {
+        alert("이름을 입력해주세요.");
     }
     
-    if(document.box_s.f.body1_s.id.value == ""){
-        alert("아이디를 입력하세요");
-        document.box_s.f.body1_s.id.focus();
-        return;
+    if (getElementById("birth") == "") {
+        alert("생년월일을 입력해주세요.");
     }
-    /*else if (document.f.body1_s.id.value 영문숫자조합이 아닐 때){
-	    alert("아이디 형식이 맞지 않습니다.");
-	}*/
-    if(document.box_s.f.body1_s.pw.value == ""){
-        alert("패스워드를 입력하세요");
-        document.box_s.f.body1_s.pw.focus();
-        return;
-    } else if (document.box_s.f.body1_s.pw.value != document.box_s.f..body1_s.pw_ch.value){
-        alert("암호가 일치하지 않습니다. 다시 입력하세요");
-        document.box_s.f.body1_s.pw.value = "";
-        document.box_s.f.body1_s.pw_ch.value = "";
-        document.box_s.f.body1_s.pw_ch.focus();
-        return;
+    else if (getElementById("birth").length() != 8) {
+        alert("생년월일 8자리를 입력해주세요.");
     }
-    /*else if (document.f.body1_s.ㅔㅈ.value 영문숫자특수기호조합이 아닐 때){
-    	alert("비밀번호 형식이 맞지 않습니다.");
-	}*/
     
-    if(document.box_s.f.body1_s.email.value == ""){
-        alert("이메일을 입력하세요");
-        document.box_s.f.body1_s.email.focus();
-        return;
-    } 
-    /*else if (document.f.body1_s.email.value == ""){
-        alert("이메일 형식이 맞지 않습니다.");
-        document.f.body1_s.email.value == ""
-        document.f.body1_s.email.focus();
-        return;
-    }*/
+	const exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+	
+    if (getElementById("email") == "") {
+        alert("이메일을 입력해주세요.");
+    }
+    else if (exptext.test(getElementById("email") != "") == false) {
+        alert("이메일 형식을 지켜주세요.");
+    }
+    
+    const pw = getElementById("pw");
+    // String.prototype.search() :: 검색된 문자열 중에 첫 번째로 매치되는 것의 인덱스를 반환한다. 찾지 못하면 -1 을 반환한다.
+    // number
+    const num = pw.search(/[0-9]/g);
+    // alphabet
+    const eng = pw.search(/[a-z]/ig);
+    // special characters
+    const spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+    
+    if (getElementById("pw") == ""){
+    	alert("비밀번호를 입력해주세요.");
+    }else if (pw.length < 8) {
+        // 최소 6문자.
+        alert("비밀번호를 최소 8자리 입력해주세요.");
+    } else if (pw.search(/\s/) != -1) {
+        // 공백 제거.
+        alert("비밀번호를 공백 없이 입력해주세요.");
+    } else if (num < 0 && eng < 0 && spe < 0) {
+        // 한글과 같은 문자열 입력 방지.
+        alert("비밀번호를 다시 입력해주세요.");
+    }
 
-    //요청 URL
-    document.box_s.f.action = "signin-db.jsp";
-
-    //서버쪽에 보내기
-    document.box_s.f.submit();
+    
+    if (getElementById("pw2") == ""){
+    	alert("비밀번호 확인을 입력해주세요.");
+    }
+    else if (getElementById("pw") !== getElementById("pw"2)) {
+    	alert("비밀번호가 일치하지 않습니다.");
+    }
+    
+}
+function checkAll(){
+	if(document.getElementById("all").checked){
+		document.getElementById("service").checked = true;
+		document.getElementById("personal").checked = true;
+		document.getElementById("marketing").checked = true;
+	}
+	else if (!document.getElementById("service").checked){
+		document.getElementById("service").checked = false;
+		document.getElementById("personal").checked = false;
+		document.getElementById("marketing").checked = false;
+	}
+	
 }
 </script>
 </head>
-
 <body>
 	<header id="header">
 		<div class="container">
@@ -190,15 +196,15 @@ function checkid(){
 	</header>
 	<br>
 	<div id="box_s">
-	<form id="f" method="post">
 		<div id="title_s">&nbsp;&nbsp;회 원 가 입</div>
+		<form id="signin_form" method="post" action="signin-db.jsp">
 		<h3>1. 회원정보 입력</h3>
 		<h5>회원정보를 입력해주세요.</h5>
 		<div>
 			<table id="body1_s">
 				<tr>
 					<th>이름</th>
-					<td><input type="text" name="name" placeholder="이름"></td>
+					<td><input type="text" name="name" placeholder="이름"></td>				
 				</tr>
 				<tr>
 					<th>생년월일</th>
@@ -211,18 +217,15 @@ function checkid(){
 				</tr>
 				<tr>
 					<th>비밀번호</th>
-					<td><input type="password" name="pw"
-						placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합">
+					<td><input type="password" name="pw" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합">
 				</tr>
 				<tr>
 					<th>비밀번호 확인</th>
-					<td><input type="password" name="pw_ch"
-						placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합">
+					<td><input type="password" name="pw2" placeholder="영문, 숫자, 특수기호 중 2가지 이상 조합">
 				</tr>
 				<tr>
 					<th>이메일 주소</th>
-					<td><input type="text" name="email"
-						placeholder="이메일 주소를 입력해주세요. ">
+					<td><input type="text" name="email" placeholder="이메일 주소를 입력해주세요. ">
 				</tr>
 			</table>
 			<br> 
@@ -235,7 +238,7 @@ function checkid(){
 		</h5>
 		<br>
 		<div id="checks">
-				<input type="checkbox" id="all"> 필수항목 전체동의 <br>
+				<input type="checkbox" id="all" onclick="checkAll()"> 필수항목 전체동의 <br>
 				<input type="checkbox" id="service"> 서비스 이용약관동의(필수)<br>
 				<input type="checkbox" id="personal"> 개인정보 수집 및 이용동의(필수)<br> 
 				<input type="checkbox" id="marketing"> 마케팅 활용을 위한 개인정보 수집 이용<br>
@@ -243,10 +246,9 @@ function checkid(){
 		<br><br>
 		&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 		&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-		<input type="submit" id="find_s" value="회원가입" onclick="send()">
+		<input type="submit" id="find_s" value="회원가입">
 		<input type="reset" id="find_s" value="취소">
 	</form>
 	</div>
-
 </body>
 </html>

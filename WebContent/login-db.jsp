@@ -1,47 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@page import="java.sql.*,java.util.*"%>
 <%
-	request.setCharacterEncoding("utf-8");
+   request.setCharacterEncoding("utf-8");
 %>
 <html>
 <head>
 </head>
 <body>
 <%
-	Connection conn = null;
-	Statement stmt = null;
-	ResultSet rs = null;
+   Connection conn = null;
+   Statement stmt = null;
+   ResultSet rs = null;
 
-	String id = request.getParameter("id");
-	String pw = request.getParameter("pw");
+   String id = request.getParameter("id");
+   String pw = request.getParameter("pw");
 
-	/* session.putValue("id", id);*/
-	try{
-	Class.forName("com.sql.jdbc.Driver");
-	String jdbcurl = "jdbc:mysql://localhost:3306/teamproject?serverTimeZone=UTC";
-	conn = DriverManager.getConnection(jdbcurl, "root", "ohj1018");
+   try {
+      Class.forName("com.mysql.jdbc.Driver");
+      String url = "jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC";
+      conn = DriverManager.getConnection(url, "root", "0000");
 
-	stmt = conn.createStatement();
-	rs = stmt.executeQuery("select * from users where userid='" + id + "' and password='" + pw + "'");
+      stmt = conn.createStatement();
+      
+      String sql = "select * from members where id = ' "+ id + "'";
+      rs = stmt.executeQuery(sql);
+      
+      while(rs.next()){
+	  if(id == rs.getString("id") && pw == rs.getString("pw")){
+			session.setAttribute("id", id);
+%>
+			<script>
+				alert(rs.getString("name")+"님 환영합니다!");
+				response.sendRedirect("movie_board_main.html");
+			</script>
+<%
+		}else{
+%>
+			<script>
+				alert("아이디와 비밀번호를 확인해주세요!");
+				response.sendRedirect("login.jsp");
+			</script>
+<%
+			}
+      }
 	}
 	catch(Exception e){
-		out.println("오류: "+ e.getMessage());
-	}
-	
-	try {
-		rs.next();
-		if (rs.getString("pw").equals(pw) && rs.getString("id").equals(id)) {
-			response.sendRedirect("movie_board_main.html");
-		} else {
-			request.setAttribute("errMsg", "아이디 또는 비밀번호가 일치않습니다.");
-			RequestDispatcher rd = request.getRequestDispatcher("login.html");
-			rd.forward(request, response);
-		}
-	} catch (Exception e) {
-		e.printStackTrace();
+		out.println("DB연동오류입니다.:"+e.getMessage());
 	}
 %>
-
 </body>
 </html>

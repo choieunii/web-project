@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.sql.*" %>
 <%request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -9,20 +11,33 @@
 </head>
 <body>
 <%
+	int code = (int)(10.0 * Math.random());
 	String name = request.getParameter("name");
 	String birth = request.getParameter("birth");
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	String email = request.getParameter("email");
-
+	int marketing = 0;
+	
+	if (request.getParameter("agrees") != null){
+		String checkBoxes[] = request.getParameterValues("agrees");
+		for (String checkbox : checkBoxes){			
+			if(checkbox == "marketing")
+				marketing = 1;
+		}
+	}
+	
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
 	try{
-		Class.forName("com.sql.jdbc.Driver");
-		String jdbcurl = "jdbc:mysql://localhost:3306/teamproject?serverTimeZone=UTC";
+	    Class.forName("com.mysql.jdbc.Driver");
+	    String jdbcurl = "jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC";
 		conn  = DriverManager.getConnection(jdbcurl, "root", "0000");
-		rs = stmt.executeQuery("insert into members values('"+name+"','"+birth+"','"+id +"','"+pw+"','"+email+"')");
+	    stmt = conn.createStatement();
+		// code(int), name, birth, id, pw, email, marketing(int)
+		stmt.executeUpdate("insert into members values("+ code +",'"+name+"','"+birth+"','"
+								+id +"','"+pw+"','"+email+"',"+ marketing +")");
 		
 		response.sendRedirect("movie_board_main.html");
 	}

@@ -119,8 +119,20 @@ font-size: 10px;
 				setTimeout(poster_slide, 2500); // Change image every 2 seconds
 			}
 			
+			$(document).on('submit','#login_form', function(){		  
+			      if($("#id").val() == ""){
+			         alert("아이디를 입력해주세요");
+			         $("#id").focus(); 
+			         return false; 
+			      }
+			      if($("#pw").val() == ""){
+			         alert("패스워드를 입력해주세요");
+			         $("#pw").focus(); 
+			         return false; 
+			      }
+			});
 		});
-	</script>
+</script>
 	
 <%
 String errMsg = (String)request.getAttribute("errMsg") ;
@@ -136,7 +148,7 @@ if(errMsg == null)
 				<div class="header clearfix">
 					<h1>
 						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
-								alt="teamlogo" onclick="location.href='mega292_13.html'"></em><br>
+								alt="teamlogo" onclick="location.href='main.html'"></em><br>
 						</a>
 					</h1>
 
@@ -149,10 +161,9 @@ if(errMsg == null)
 	<div id="box">
 		<div id="title">
 			&nbsp;&nbsp;로그인	
-			<img id="close" src="assets/img/close.svg">
 		</div>
 		<div id="body_l">
-		<form action="login-db.jsp" method="post">
+		<form id="login_form" action="login-db.jsp" method="post">
 			<div id="input_login">
 				<input name="id" id="id" type="text" placeholder="아이디"><br>
 				<input name="pw" id="pw" type="password" placeholder="비밀번호"><br>
@@ -160,8 +171,8 @@ if(errMsg == null)
 				&nbsp;<input type="checkbox"> 아이디 저장하기<br>
 				<br> <input type="submit" value="로그인" id="login">
 				<br> <br> <small>&emsp;&emsp;
-				<a href="findIdPw.jsp">ID/PW찾기</a>&emsp; 
-				<a href="signin.jsp">회원가입</a>&emsp;
+				<a href="findIdPw.jsp" target="_blank">ID/PW찾기</a>&emsp; 
+				<a href="signin.jsp" target="_blank">회원가입</a>&emsp;
 				<a href="">비회원 예매확인</a>
 				</small>
 			</div>

@@ -37,7 +37,7 @@ h5 {
 	border-width: 1px;
 	border-style: solid;
 	border-color: rgb(190, 190, 190);
-	height: 390px;
+	height: 420px;
 }
 
 #title {

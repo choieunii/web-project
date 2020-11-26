@@ -6,6 +6,7 @@
 %>
 <html>
 <head>
+<script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
 </head>
 <body>
 <%
@@ -15,7 +16,9 @@
 
    String id = request.getParameter("id");
    String pw = request.getParameter("pw");
-
+   
+   String redirectUrl="";
+   
    try {
       Class.forName("com.mysql.jdbc.Driver");
       String url = "jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC";
@@ -28,22 +31,19 @@
       
       while(rs.next()){
 	  if(id == rs.getString("id") && pw == rs.getString("pw")){
-			session.setAttribute("id", id);
-%>
+		  session.setAttribute("id", id);%>
 			<script>
-				alert(rs.getString("name")+"님 환영합니다!");
-				response.sendRedirect("movie_board_main.html");
-			</script>
-<%
-		}else{
-%>
+		  		alert(rs.getString("name")+"님 환영합니다!");
+			</script><%
+			redirectUrl = "main.html";
+		}else{%>
 			<script>
 				alert("아이디와 비밀번호를 확인해주세요!");
-				response.sendRedirect("login.jsp");
-			</script>
-<%
+			</script><%
+			redirectUrl = "login.jsp";
 			}
       }
+      response.sendRedirect(redirectUrl);
 	}
 	catch(Exception e){
 		out.println("DB연동오류입니다.:"+e.getMessage());

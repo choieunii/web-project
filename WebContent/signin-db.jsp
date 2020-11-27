@@ -32,7 +32,7 @@
 	ResultSet rs = null;
 	try{
 	    Class.forName("com.mysql.jdbc.Driver");
-	    String jdbcurl = "jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC";
+	    String jdbcurl = "jdbc:mysql://localhost:3306/web?serverTimezone=UTC";
 		conn  = DriverManager.getConnection(jdbcurl, "root", "0000");
 	    stmt = conn.createStatement();
 		// code(int), name, birth, id, pw, email, marketing(int)

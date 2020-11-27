@@ -23,22 +23,21 @@
 
 </head>
 <body>
-
 	<header id="header">
 		<div class="container">
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
 						<a href="#"> <em><img src="assets/img/teamlogo.png"
-								alt="teamlogo" onclick="location.href='main.html'"></em><br>
+								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
 							<strong><img src="assets/img/logo-sub.png"
 								alt="LIFE THEATER"></strong>
 						</a>
 					</h1>
-
-				</div>
-			</div>
-		</div>
+					
+                </div>
+            </div>
+        </div>
 	</header>
 	<!-- //header -->
 
@@ -53,9 +52,9 @@
 						<ul>
 							<li class="purple"><a href="#"
 								onclick="location.href='login.jsp'">로그인 </a></li>
-							<li class="purple"><a href="#"
-								onclick="location.href='movie_board_main.html'">영화 게시판</a></li>
-							<li class="purple"><a href="#"
+							<li class="purple"><a href="#" 
+								onclick="location.href='board/movie_board_main.jsp'">영화 게시판</a></li>
+                            <li class="purple"><a href="#"
 								onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
 						</ul>
 					</div>
@@ -478,13 +477,6 @@
 	</script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 

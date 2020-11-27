@@ -42,7 +42,7 @@
 											$(this).addClass("onButton");
 											$(this).siblings("button")
 													.removeClass("onButton");
-											if (($(".day"))
+											if (($(".day").hasClass("onButton"))
 													&& ($(".moviebutton")
 															.hasClass("onButton"))
 													&& ($(".theaterbutton")
@@ -71,8 +71,12 @@
 		$("#inputtheater").val(theater);
 		$("#inputtime").val(time);
 		var movieid= $(".moviebutton.onButton").attr("id");
-		$("#inputid").val(movieid)
-		$("#booking").submit();
+		var theaterid= $(".theaterbutton.onButton").attr("id");
+		var timeid= $(".timebutton.onButton").attr("id");
+		$("#inputid").val(movieid);
+		$("#inputid2").val(theaterid);
+		$("#inputid3").val(timeid);
+		$("#ticket").submit();
 	}
 </script>
 </head>
@@ -97,7 +101,7 @@
 	</header>
 	<!-- //header -->
 	<!-- Modal -->
-	<form action ="booking.jsp" method="post" name="booking" id="booking">
+	<form action ="ticket.jsp" method="post" name="ticket" id="ticket">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document"
@@ -128,6 +132,8 @@
 					<input id="inputtheater" name="theater" type="hidden"/>
 					<input id="inputtime" name="time" type="hidden"/> 
 					<input id="inputid" name="movieid" type="hidden"/>
+					<input id="inputid2" name="theaterid" type="hidden"/>
+					<input id="inputid3" name="timeid" type="hidden"/>
 					선택하신 정보가 맞습니까?
 				</div>
 				<div class="modal-footer"

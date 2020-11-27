@@ -19,12 +19,11 @@
 	String email = request.getParameter("email");
 	int marketing = 0;
 	
-	String checkBoxes[] = request.getParameterValues("agrees");
-	if (checkBoxes != null){	
-		for (int i = 0; i < checkBoxes.length; i++){			
-			if(checkBoxes[i].equals("marketing")){
+	if (request.getParameter("agrees") != null){
+		String checkBoxes[] = request.getParameterValues("agrees");
+		for (String checkbox : checkBoxes){			
+			if(checkbox == "marketing")
 				marketing = 1;
-			}
 		}
 	}
 	

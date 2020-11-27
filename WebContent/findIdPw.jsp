@@ -77,7 +77,7 @@ h5 {
 	border-width: 0px;
 }
 
-#search {
+.search {
 	margin: 14px;
 	width: 200px;
 	border-width: 0px;
@@ -106,26 +106,25 @@ td {
 <script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
 <script>
 $(document).ready(function(){
-	alert("확인용");
-	$(document).on('click', '#search', function(){
-		if($("#name").val() == ""){
+	$(document).on('submit','#find_form', function(){
+	      //이름 공백 검사 
+	      if($("#name").val() == ""){
 	         alert("이름을 입력해주세요");
-	         return;
-	    }
-		if($("#birth").val() == ""){
-	         alert("생년월일을 입력해주세요");
-	         return;
-	    }
-		if($("#email").val() == ""){
-	         alert("이름을 입력해주세요");
-	         return;
-	    }
-		
-		/*
-		id = $('#id').val();
-		url = "confirmId.jsp?id="+ id;
-		open(url, "아이디 중복 확인", "toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=300, height=200");
-		*/
+	         $("#name").focus(); 
+	         return false; 
+	      } 
+	      
+	      if($("#birth").val() == ""){
+		         alert("생년월일을 입력해주세요");
+		         $("#birth").focus(); 
+		         return false; 
+		  } 
+	      
+	      if($("#email").val() == ""){
+		         alert("이메일을 입력해주세요");
+		         $("#email").focus(); 
+		         return false; 
+		  } 
 	});
 });
 </script>
@@ -146,9 +145,8 @@ $(document).ready(function(){
 	</header>
 	<br>
 	<div id="box">
-		<div id="title">
-			아이디 찾기/비밀번호 찾기 <small>(간편찾기)</small>
-		</div>
+		<div id="title">아이디 찾기/비밀번호 찾기 <small>(간편찾기)</small></div>
+		<form id="find_form" action="find-db.jsp" method="post">
 		<table id="findIdPw">
 			<tr>
 				<th>이름</th>
@@ -165,8 +163,9 @@ $(document).ready(function(){
 		</table>
 		<br>
 		<div align="center">
-			<input type="button" id="search" value="아이디/비밀번호 찾기">
+			<input type="submit" class="search" value="아이디/비밀번호 찾기">
 		</div>
+		</form>
 	</div>
 </body>
 

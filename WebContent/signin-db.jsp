@@ -35,15 +35,26 @@
 	    String jdbcurl = "jdbc:mysql://localhost:3306/web?serverTimezone=UTC";
 		conn  = DriverManager.getConnection(jdbcurl, "root", "0000");
 	    stmt = conn.createStatement();
-		// code(int), name, birth, id, pw, email, marketing(int)
-		stmt.executeUpdate("insert into members values("+ code +",'"+name+"','"+birth+"','"
+	    rs = stmt.executeQuery("select id from members where id='" + id + "'");
+
+		if(rs.next()){	
+			if(id.equals(rs.getString("id"))){
+			%>
+			<script type="text/javascript">
+				alert("아이디 중복확인 바랍니다.");
+				history.go(-1);
+			</script>
+			<%
+			}
+		}else{	
+			// code(int), name, birth, id, pw, email, marketing(int)
+			stmt.executeUpdate("insert into members values("+ code +",'"+name+"','"+birth+"','"
 								+id +"','"+pw+"','"+email+"',"+ marketing +")");
-		
-		response.sendRedirect("main.jsp");
+			response.sendRedirect("main.jsp");
+		}
 	}
 	catch(Exception e){
-		System.out.println("DB 연동 오류입니다 : " + e.getMessage());
-		e.printStackTrace();
+		out.println("DB 연동 오류입니다 : " + e.getMessage());
 	}
 %>
 </body>

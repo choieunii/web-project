@@ -6,11 +6,28 @@
 %>
 <html>
 <head>
+<style>
+body {
+	background-color: #f8f9fa;
+	margin: 100px 170px 100px 170px;
+	position: relative;
+}
+</style>
 </head>
 <body>
-   <h4>로그인 페이지</h4>
+	<header id="header" align="center">
+					<h1>
+					<a href="#"> 
+                    	<em>
+                     	<img src="assets/img/teamlogo_made.png" alt="teamlogo" width="200px">
+                     	<hr>
+                     	</em>
+                  	</a>
+					</h1>
+	</header>
+	<br><br>
    <%
-      Connection conn = null;
+   Connection conn = null;
    Statement stmt = null;
    ResultSet rs = null;
 
@@ -19,23 +36,18 @@
 
    try {
       Class.forName("com.mysql.jdbc.Driver");
-      String url = "jdbc:mysql://localhost:3306/web?serverTimezone=UTC";
+      String url = "jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC";
       conn = DriverManager.getConnection(url, "root", "0000");
 
       stmt = conn.createStatement();
 
       String sql = "select * from members where id = '" + id + "'";
-      System.out.print(sql);
+      
       rs = stmt.executeQuery(sql);
       if (rs != null) {
-         System.out.print("nnnull");
-         while (rs.next()) { // 이 라인에서 문제가 생기는 것 같음
-      System.out.println(rs.getString("pw"));
+         while (rs.next()) {
       if (pw.equals(rs.getString("pw"))) {
-         System.out.println(rs.getString("pw"));
-         session.setAttribute("id", id);
-         session.setMaxInactiveInterval(60*60) ;
-
+         session.setAttribute("name", rs.getString("name"));
    %>
    <div style="text-align: center;">
       <script type="text/javascript">

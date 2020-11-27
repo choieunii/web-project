@@ -28,10 +28,8 @@
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo.png"
+						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
 								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
-							<strong><img src="assets/img/logo-sub.png"
-								alt="LIFE THEATER"></strong>
 						</a>
 					</h1>
 					
@@ -50,12 +48,20 @@
 
 					<div class="bm_right">
 						<ul>
-							<li class="purple"><a href="#"
-								onclick="location.href='login.jsp'">로그인 </a></li>
-							<li class="purple"><a href="#" 
-								onclick="location.href='board/movie_board_main.jsp'">영화 게시판</a></li>
-                            <li class="purple"><a href="#"
-								onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
+							<%
+                          	if(session.getAttribute("name") != null){
+                           	%>
+                                <li class="purple"><a href="./logout.jsp">로그아웃 </a></li>
+                           	<%
+                           	}
+                            else{
+                            %>
+                            	<li class="purple"><a href="./login.jsp">로그인 </a></li>
+                            <% 
+                            } 
+                            %>
+							<li class="purple"><a href="#" onclick="location.href='board/movie_board_main.jsp'">영화 게시판</a></li>
+                            <li class="purple"><a href="#" onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
 						</ul>
 					</div>
 				</div>

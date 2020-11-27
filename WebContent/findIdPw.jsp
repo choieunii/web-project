@@ -32,7 +32,7 @@ h5 {
 #box {
 	background-color: white;
 	margin: auto;
-	height: 390px;
+	height: 340px;
 	width: 650px;
 	border-width: 1px;
 	border-style: solid;
@@ -66,8 +66,9 @@ h5 {
 	border: 1px solid grey;
 	border-collapse: collapse;
 	margin: auto;
-	margin-top: 40px;
+	margin-top: 60px;
 	font-size: 13px;
+	width: 350px;
 }
 
 #findIdPw input {
@@ -76,9 +77,9 @@ h5 {
 	border-width: 0px;
 }
 
-.find_f {
+#search {
 	margin: 14px;
-	width: 140px;
+	width: 200px;
 	border-width: 0px;
 	border-radius: 5px;
 	font-size: 13px;
@@ -104,8 +105,30 @@ td {
 
 <script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
 <script>
-
-	</script>
+$(document).ready(function(){
+	alert("확인용");
+	$(document).on('click', '#search', function(){
+		if($("#name").val() == ""){
+	         alert("이름을 입력해주세요");
+	         return;
+	    }
+		if($("#birth").val() == ""){
+	         alert("생년월일을 입력해주세요");
+	         return;
+	    }
+		if($("#email").val() == ""){
+	         alert("이름을 입력해주세요");
+	         return;
+	    }
+		
+		/*
+		id = $('#id').val();
+		url = "confirmId.jsp?id="+ id;
+		open(url, "아이디 중복 확인", "toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=300, height=200");
+		*/
+	});
+});
+</script>
 </head>
 
 <body>
@@ -114,8 +137,7 @@ td {
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
-								alt="teamlogo" onclick="location.href='mega292_13.html'"></em><br>
+						<a href="#"> <em><img src="assets/img/teamlogo_made.png" alt="teamlogo"></em><br>
 						</a>
 					</h1>
 				</div>
@@ -130,35 +152,20 @@ td {
 		<table id="findIdPw">
 			<tr>
 				<th>이름</th>
-				<td><input type="text" name="name" placeholder="이름"></td>
+				<td><input type="text" name="name" id="name" placeholder="이름"></td>
 			</tr>
 			<tr>
 				<th>생년월일</th>
-				<td><input type="text" name="birth"
-					placeholder="생년월일 8자리"></td>
+				<td><input type="text" name="birth" id="birth" placeholder="생년월일 8자리"></td>
 			</tr>
 			<tr>
-<<<<<<< HEAD
-				<th>휴대폰번호</th>
-				<td><input type="text" name="number"
-					placeholder=" - 없이 입력"> &emsp;
-					<button id="check">인증요청</button></td>
-=======
 				<th>이메일</th>
-				<td><input type="text" name="email" placeholder="이메일 주소 입력">
-					&emsp;<button id="check">인증요청</button></td>
->>>>>>> branch 'maiin' of https://github.com/choieunii/webproject.git
-			</tr>
-			<tr>
-				<th>인증번호</th>
-				<td><input type="text" name="name"> &emsp;
-					<button id="check">인증확인</button></td>
+				<td><input type="text" name="email" id="email" placeholder="이메일">
 			</tr>
 		</table>
 		<br>
 		<div align="center">
-			<button class="find_f">아이디 찾기</button>
-			<button class="find_f">비밀번호 찾기</button>
+			<input type="button" id="search" value="아이디/비밀번호 찾기">
 		</div>
 	</div>
 </body>

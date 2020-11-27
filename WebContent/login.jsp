@@ -133,12 +133,6 @@ font-size: 10px;
 			});
 		});
 </script>
-	
-<%
-String errMsg = (String)request.getAttribute("errMsg") ;
-if(errMsg == null)
-	errMsg = " ";
-%>
 </head>
 
 <body>
@@ -147,11 +141,12 @@ if(errMsg == null)
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
-								alt="teamlogo" onclick="location.href='main.html'"></em><br>
-						</a>
+					<a href="#"> 
+                    	<em>
+                     	<img src="assets/img/teamlogo_made.png" alt="teamlogo">
+                     	</em>
+                  	</a>
 					</h1>
-
 				</div>
 			</div>
 		</div>
@@ -163,16 +158,15 @@ if(errMsg == null)
 			&nbsp;&nbsp;로그인	
 		</div>
 		<div id="body_l">
-		<form id="login_form" action="login-db.jsp" method="post">
+		<form id="login_form" action="./login-db.jsp" method="post">
 			<div id="input_login">
 				<input name="id" id="id" type="text" placeholder="아이디"><br>
 				<input name="pw" id="pw" type="password" placeholder="비밀번호"><br>
-				<div id="error"><%=errMsg%></div>
 				&nbsp;<input type="checkbox"> 아이디 저장하기<br>
 				<br> <input type="submit" value="로그인" id="login">
 				<br> <br> <small>&emsp;&emsp;
-				<a href="findIdPw.jsp" target="_blank">ID/PW찾기</a>&emsp; 
-				<a href="signin.jsp" target="_blank">회원가입</a>&emsp;
+				<a href="./findIdPw.jsp">ID/PW찾기</a>&emsp; 
+				<a href="./signin.jsp">회원가입</a>&emsp;
 				<a href="">비회원 예매확인</a>
 				</small>
 			</div>

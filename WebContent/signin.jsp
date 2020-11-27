@@ -106,71 +106,22 @@ td {
 	padding: 5px;
 }
 </style>
-<<<<<<< HEAD
-<script type="text/javascript">
-function checkid(){
-	/*아이디 중복 확인*/
-}
-function login() {
-	console.log("안녕나는 로그인");
-    var name = document.getElementById("name");
-    var birth = document.getElementById("birth");
-    var id = document.getElementById("id");
-    var pw = document.getElementById("pw");
-    var pw2 = document.getElementById("pw2");
-    var email = document.getElementById("email");
-    
-    // email rule
-    var regul2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
-    
-    if(name.value == ""){
-    	alert("이름을 입력하세요.");
-    	return false;
-    }
-    
-    if(birth.value == ""){
-    	alert("생년월일을 입력하세요.");
-    	return false;
-    }
-    else if(birth.value != 8){
-    	alert("생년월일을 8자리로 입력하세요.");
-    	return false;
-    }
-   
-    if(id.value == ""){
-    	alert("아이디를 입력하세요.");
-    	return false;
-    }
-    /*else if(아이디 형식에 맞지 않는 경우)*/
-    
-    if(pw.value == ""){
-    	alert("비밀번호를 입력하세요.");
-    	return false;
-    }
-    /*else if(비밀번호 형식에 맞지 않는 경우)*/
-    
-    if(pw2.value == ""){
-    	alert("비밀번호 확인을 입력하세요.");
-    	return false;
-    }
-    else if(pw != pw2){
-    	alert("비밀번호가 일치하지않습니다.");
-    	return false;    	
-    }
-    
-    if(email.value == ""){
-    	alert("이메일을 입력하세요.");
-    	return false;
-    }
-    /*else if(이메일 형식에 맞지 않는 경우)*/
-=======
 <script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
 <script>
 $(document).ready(function(){
 	$(document).on('click', '#idcheck', function(){
-		alert("아이디 중복확인 클릭");
+		if($("#id").val() == ""){
+	         alert("아이디를 입력해주세요");
+	         return;
+	    }
+		
+		id = $('#id').val();
+		url = "confirmId.jsp?id="+ id;
+		open(url, "아이디 중복 확인", "toolbar=no, location=no, status=no, menubar=no, scrollbars=no, resizable=no, width=300, height=200");
+		
 	});
 	
+
 	$(document).on('click', '#all', function(){
 		if($('#all').is(":checked")){
 			$(".chk").prop("checked", true);
@@ -280,7 +231,6 @@ $(document).ready(function(){
 		  } 
 	});
 });
->>>>>>> branch 'maiin' of https://github.com/choieunii/webproject.git
 
 </script>
 </head>
@@ -291,7 +241,7 @@ $(document).ready(function(){
 				<div class="header clearfix">
 					<h1>
 						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
-								alt="teamlogo" onclick="location.href='main.html'"></em><br>
+								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
 						</a>
 					</h1>
 				</div>

@@ -2,7 +2,11 @@
     pageEncoding="UTF-8"%>
 <% 
 if(session !=null){
-	session.invalidate(); 
-	response.sendRedirect("main.html");
+	session.invalidate();
+%>
+<script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
+<script>alert("로그아웃 되었습니다")</script>
+<%
+	response.sendRedirect("main.jsp");
 }
 %> 

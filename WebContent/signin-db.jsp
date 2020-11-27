@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="java.sql.*" %>
 <%request.setCharacterEncoding("utf-8"); %>
 <!DOCTYPE html>
 <html>
@@ -19,11 +18,12 @@
 	String email = request.getParameter("email");
 	int marketing = 0;
 	
-	if (request.getParameter("agrees") != null){
-		String checkBoxes[] = request.getParameterValues("agrees");
-		for (String checkbox : checkBoxes){			
-			if(checkbox == "marketing")
+	String checkBoxes[] = request.getParameterValues("agrees");
+	if (checkBoxes != null){	
+		for (int i = 0; i < checkBoxes.length; i++){			
+			if(checkBoxes[i].equals("marketing")){
 				marketing = 1;
+			}
 		}
 	}
 	
@@ -39,7 +39,7 @@
 		stmt.executeUpdate("insert into members values("+ code +",'"+name+"','"+birth+"','"
 								+id +"','"+pw+"','"+email+"',"+ marketing +")");
 		
-		response.sendRedirect("movie_board_main.html");
+		response.sendRedirect("main.jsp");
 	}
 	catch(Exception e){
 		System.out.println("DB 연동 오류입니다 : " + e.getMessage());

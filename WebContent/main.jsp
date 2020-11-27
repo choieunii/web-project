@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -5,7 +7,7 @@
 <meta name="viewport"
 	content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>ÏòÅÌôîÍ¥Ä ÏÇ¨Ïù¥Ìä∏_Î©îÏù∏</title>
+<title>øµ»≠∞¸ ªÁ¿Ã∆Æ_∏ﬁ¿Œ</title>
 
 <!-- CSS -->
 <link rel="stylesheet" href="assets/css/reset13.css">
@@ -14,15 +16,13 @@
 <link rel="stylesheet" href="assets/css/font-awesome.css">
 
 
-<!-- Ïõπ Ìè∞Ìä∏ -->
+<!-- ¿• ∆˘∆Æ -->
 <link
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&amp;subset=korean"
 	rel="stylesheet">
 
 </head>
 <body>
-
-<<<<<<< HEAD
 	<header id="header">
 		<div class="container">
 			<div class="row">
@@ -34,12 +34,12 @@
 								alt="LIFE THEATER"></strong>
 						</a>
 					</h1>
-=======
+					
                     <div class="bm_right">
                         <ul>
-                            <li class="purple"><a href="#" onclick="location.href='login.jsp'">Î°úÍ∑∏Ïù∏ </a></li>
-                            <li class="purple"><a href="#" onclick="location.href='board/movie_board_main.jsp'">ÏòÅÌôî Í≤åÏãúÌåê</a></li>
-                            <li class="purple"><a href="#"  onclick="location.href='movieChoice.jsp'">ÏòÅÌôî ÏòàÎß§</a></li>                                                    
+                            <li class="purple"><a href="#" onclick="location.href='login.jsp'">∑Œ±◊¿Œ </a></li>
+                            <li class="purple"><a href="#" onclick="location.href='board/movie_board_main.jsp'">øµ»≠ ∞‘Ω√∆«</a></li>
+                            <li class="purple"><a href="#"  onclick="location.href='movieChoice.jsp'">øµ»≠ øπ∏≈</a></li>                                                    
                         </ul>
                     </div>
                 </div>
@@ -51,24 +51,24 @@
                     <div class="swiper-slide ss1">
                         <div class="container">
                             <div class="row">
-                                <h2>ÎèÑÍµ¥ <em>***</em></h2>
-                                <p>ÏòÅÌôîÏÜåÍ∞ú</p>
+                                <h2>µµ±º <em>***</em></h2>
+                                <p>øµ»≠º“∞≥</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide ss2">
                         <div class="container">
                             <div class="row">
-                                <h2>ÏÇºÏßÑÍ∑∏Î£π ÏòÅÏñ¥ ÌÜ†ÏùµÎ∞ò <em>***</em></h2>
-                                <p>ÏòÅÌôîÏÜåÍ∞ú</p>
+                                <h2>ªÔ¡¯±◊∑Ï øµæÓ ≈‰¿Õπ› <em>***</em></h2>
+                                <p>øµ»≠º“∞≥</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide ss3">
                         <div class="container">
                             <div class="row">
-                                <h2>Îã¥Î≥¥ <em>***</em></h2>
-                                <p>ÏòÅÌôîÏÜåÍ∞ú</p>
+                                <h2>¥„∫∏ <em>***</em></h2>
+                                <p>øµ»≠º“∞≥</p>
                             </div>
                         </div>
                     </div>
@@ -86,10 +86,10 @@
         <div class="container">
             <div class="row">
                 <div class="movie">
-                    <h2 class="ir_so">ÏòÅÌôî ÏòàÎß§</h2>
+                    <h2 class="ir_so">øµ»≠ øπ∏≈</h2>
                     <div class="movie_title">
                         <ul>
-                            <li class="active" style="width:100%"><a href="#">Î∞ïÏä§ Ïò§ÌîºÏä§</a></li>
+                            <li class="active" style="width:100%"><a href="#">π⁄Ω∫ ø¿««Ω∫</a></li>
                         </ul>
                     </div>
                     <div class="movie_chart">
@@ -98,7 +98,7 @@
                                 <div>
                                     <div class="poster">
                                         <figure>
-                                            <img src="assets/img/m1.jpg" srcset="assets/img/poster01@2.jpg 2x"  alt="ÎèÑÍµ¥">
+                                            <img src="assets/img/m1.jpg" srcset="assets/img/poster01@2.jpg 2x"  alt="µµ±º">
                                         </figure>
                                         <div class="rank"><strong>1</strong></div>                                                                            
                                         
@@ -110,19 +110,19 @@
                             
                                     </div>
                                     <div class="infor">
-                                        <h3><span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>ÎèÑÍµ¥<br><br></strong></h3>
+                                        <h3><span class="icon a15 ir_pm">12ºº</span> <strong>µµ±º<br><br></strong></h3>
                                         <div style="font-size: 100px;">                                   
                                         </div>
                                         <div class="infor_btn">
-                                            <a href="board/movie_board_1.jsp">ÏÉÅÏÑ∏Î≥¥Í∏∞</a>
-                                            <a href="#">ÏòàÎß§ÌïòÍ∏∞</a>
+                                            <a href="board/movie_board_1.jsp">ªÛºº∫∏±‚</a>
+                                            <a href="#">øπ∏≈«œ±‚</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="poster">
                                         <figure>
-                                            <img src="assets/img/m2.jpg" srcset="assets/img/poster02@2.jpg 2x"  alt="ÏÇºÏßÑ">
+                                            <img src="assets/img/m2.jpg" srcset="assets/img/poster02@2.jpg 2x"  alt="ªÔ¡¯">
                                         </figure>
                                         <div class="rank"><strong>2</strong></div>                                      
                                                                               
@@ -132,17 +132,17 @@
                                         </div>
                                     </div>
                                     <div class="infor">
-                                        <h3><span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>ÏÇºÏßÑÍ∑∏Î£π ÏòÅÏñ¥ ÌÜ†ÏùµÎ∞ò</strong></h3>
+                                        <h3><span class="icon a15 ir_pm">12ºº</span> <strong>ªÔ¡¯±◊∑Ï øµæÓ ≈‰¿Õπ›</strong></h3>
                                         <div class="infor_btn">
-                                            <a href="board/movie_board_2.jsp">ÏÉÅÏÑ∏Î≥¥Í∏∞</a>
-                                            <a href="#">ÏòàÎß§ÌïòÍ∏∞</a>
+                                            <a href="board/movie_board_2.jsp">ªÛºº∫∏±‚</a>
+                                            <a href="#">øπ∏≈«œ±‚</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="poster">
                                         <figure>
-                                            <img src="assets/img/m3.jpg" srcset="assets/img/poster03@2.jpg 2x"  alt="Îã¥Î≥¥">
+                                            <img src="assets/img/m3.jpg" srcset="assets/img/poster03@2.jpg 2x"  alt="¥„∫∏">
                                         </figure>
                                         <div class="rank"><strong>3</strong></div>
                                         <div class="mx">
@@ -151,17 +151,17 @@
                                         </div>
                                     </div>
                                     <div class="infor">
-                                        <h3><span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>Îã¥Î≥¥<br><br></strong></h3>
+                                        <h3><span class="icon a15 ir_pm">12ºº</span> <strong>¥„∫∏<br><br></strong></h3>
                                         <div class="infor_btn">
-                                            <a href="board/movie_board_3.jsp">ÏÉÅÏÑ∏Î≥¥Í∏∞</a>
-                                            <a href="#">ÏòàÎß§ÌïòÍ∏∞</a>
+                                            <a href="board/movie_board_3.jsp">ªÛºº∫∏±‚</a>
+                                            <a href="#">øπ∏≈«œ±‚</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="poster">
                                         <figure>
-                                            <img src="assets/img/m4.jpg" srcset="assets/img/poster03@2.jpg 2x"  alt="ÎÖ∏Ìä∏Î∂Å">
+                                            <img src="assets/img/m4.jpg" srcset="assets/img/poster03@2.jpg 2x"  alt="≥Î∆Æ∫œ">
                                         </figure>
                                         <div class="rank"><strong>4</strong></div>
                                         <div class="mx">
@@ -170,10 +170,10 @@
                                         </div>
                                     </div>
                                     <div class="infor">
-                                        <h3><span class="icon a19 ir_pm">15ÏÑ∏</span> <strong>ÎÖ∏Ìä∏Î∂Å<br><br></strong></h3>
+                                        <h3><span class="icon a19 ir_pm">15ºº</span> <strong>≥Î∆Æ∫œ<br><br></strong></h3>
                                         <div class="infor_btn">
-                                            <a href="board/movie_board_4.jsp">ÏÉÅÏÑ∏Î≥¥Í∏∞</a>
-                                            <a href="#">ÏòàÎß§ÌïòÍ∏∞</a>
+                                            <a href="board/movie_board_4.jsp">ªÛºº∫∏±‚</a>
+                                            <a href="#">øπ∏≈«œ±‚</a>
                                         </div>
                                     </div>
                                 </div>
@@ -187,8 +187,7 @@
         </div>
     </section>
     <!-- //movie -->
-    
->>>>>>> branch 'maiin' of https://github.com/choieunii/webproject.git
+   
 
 				</div>
 			</div>
@@ -198,7 +197,7 @@
 
 
 	<section id="banner">
-		<h2 class="ir_so">ÏµúÏã† ÏòÅÌôî ÏÜåÏãù</h2>
+		<h2 class="ir_so">√÷Ω≈ øµ»≠ º“Ωƒ</h2>
 		<div class="banner_menu">
 			<div class="container">
 				<div class="row">
@@ -206,11 +205,11 @@
 					<div class="bm_right">
 						<ul>
 							<li class="purple"><a href="#"
-								onclick="location.href='login.jsp'">Î°úÍ∑∏Ïù∏ </a></li>
+								onclick="location.href='login.jsp'">∑Œ±◊¿Œ </a></li>
 							<li class="purple"><a href="#"
-								onclick="location.href='movie_board_main.html'">ÏòÅÌôî Í≤åÏãúÌåê</a></li>
+								onclick="location.href='movie_board_main.html'">øµ»≠ ∞‘Ω√∆«</a></li>
 							<li class="purple"><a href="#"
-								onclick="location.href='movieChoice.jsp'">ÏòÅÌôî ÏòàÎß§</a></li>
+								onclick="location.href='movieChoice.jsp'">øµ»≠ øπ∏≈</a></li>
 						</ul>
 					</div>
 				</div>
@@ -223,9 +222,9 @@
 						<div class="container">
 							<div class="row">
 								<h2>
-									ÎèÑÍµ¥ <em>***</em>
+									µµ±º <em>***</em>
 								</h2>
-								<p>ÏòÅÌôîÏÜåÍ∞ú</p>
+								<p>øµ»≠º“∞≥</p>
 							</div>
 						</div>
 					</div>
@@ -233,9 +232,9 @@
 						<div class="container">
 							<div class="row">
 								<h2>
-									ÏÇºÏßÑÍ∑∏Î£π ÏòÅÏñ¥ ÌÜ†ÏùµÎ∞ò <em>***</em>
+									ªÔ¡¯±◊∑Ï øµæÓ ≈‰¿Õπ› <em>***</em>
 								</h2>
-								<p>ÏòÅÌôîÏÜåÍ∞ú</p>
+								<p>øµ»≠º“∞≥</p>
 							</div>
 						</div>
 					</div>
@@ -243,9 +242,9 @@
 						<div class="container">
 							<div class="row">
 								<h2>
-									Îã¥Î≥¥ <em>***</em>
+									¥„∫∏ <em>***</em>
 								</h2>
-								<p>ÏòÅÌôîÏÜåÍ∞ú</p>
+								<p>øµ»≠º“∞≥</p>
 							</div>
 						</div>
 					</div>
@@ -262,14 +261,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="movie">
-					<h2 class="ir_so">ÏòÅÌôî ÏòàÎß§</h2>
+					<h2 class="ir_so">øµ»≠ øπ∏≈</h2>
 					<div class="movie_title">
 						<ul>
-							<li class="active" style="width: 100%"><a href="#">Î∞ïÏä§
-									Ïò§ÌîºÏä§</a></li>
+							<li class="active" style="width: 100%"><a href="#">π⁄Ω∫
+									ø¿««Ω∫</a></li>
 						</ul>
 					</div>
-					<!-- Ï≤´Î≤àÏß∏ Ï§Ñ -->
+					<!-- √ππ¯¬∞ ¡Ÿ -->
 					<div class="movie_chart">
 						<div class="swiper-container2">
 							<div class="chart_cont1 swiper-wrapper">
@@ -277,7 +276,7 @@
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m1.jpg"
-												srcset="assets/img/poster01@2.jpg 2x" alt="ÎèÑÍµ¥">
+												srcset="assets/img/poster01@2.jpg 2x" alt="µµ±º">
 										</figure>
 										<div class="rank">
 											<strong>1</strong>
@@ -292,12 +291,12 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>ÎèÑÍµ¥<br>
+											<span class="icon a15 ir_pm">12ºº</span> <strong>µµ±º<br>
 											<br></strong>
 										</h3>
 										<div style="font-size: 100px;"></div>
 										<div class="infor_btn">
-											<a href="movie_board_1.html">ÏÉÅÏÑ∏Î≥¥Í∏∞</a>
+											<a href="movie_board_1.html">ªÛºº∫∏±‚</a>
 
 										</div>
 									</div>
@@ -306,7 +305,7 @@
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m2.jpg"
-												srcset="assets/img/poster02@2.jpg 2x" alt="ÏÇºÏßÑ">
+												srcset="assets/img/poster02@2.jpg 2x" alt="ªÔ¡¯">
 										</figure>
 										<div class="rank">
 											<strong>2</strong>
@@ -319,11 +318,11 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>ÏÇºÏßÑÍ∑∏Î£π
-												ÏòÅÏñ¥ ÌÜ†ÏùµÎ∞ò</strong>
+											<span class="icon a15 ir_pm">12ºº</span> <strong>ªÔ¡¯±◊∑Ï
+												øµæÓ ≈‰¿Õπ›</strong>
 										</h3>
 										<div class="infor_btn">
-											<a href="movie_board_2.html">ÏÉÅÏÑ∏Î≥¥Í∏∞</a>
+											<a href="movie_board_2.html">ªÛºº∫∏±‚</a>
 										</div>
 									</div>
 								</div>
@@ -331,7 +330,7 @@
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m3.jpg"
-												srcset="assets/img/poster03@2.jpg 2x" alt="Îã¥Î≥¥">
+												srcset="assets/img/poster03@2.jpg 2x" alt="¥„∫∏">
 										</figure>
 										<div class="rank">
 											<strong>3</strong>
@@ -343,11 +342,11 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>Îã¥Î≥¥<br>
+											<span class="icon a15 ir_pm">12ºº</span> <strong>¥„∫∏<br>
 											<br></strong>
 										</h3>
 										<div class="infor_btn">
-											<a href="movie_board_3.html">ÏÉÅÏÑ∏Î≥¥Í∏∞</a>
+											<a href="movie_board_3.html">ªÛºº∫∏±‚</a>
 										</div>
 									</div>
 								</div>
@@ -355,7 +354,7 @@
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m4.jpg"
-												srcset="assets/img/poster03@2.jpg 2x" alt="ÎÖ∏Ìä∏Î∂Å">
+												srcset="assets/img/poster03@2.jpg 2x" alt="≥Î∆Æ∫œ">
 										</figure>
 										<div class="rank">
 											<strong>4</strong>
@@ -367,11 +366,11 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a19 ir_pm">15ÏÑ∏</span> <strong>ÎÖ∏Ìä∏Î∂Å<br>
+											<span class="icon a19 ir_pm">15ºº</span> <strong>≥Î∆Æ∫œ<br>
 											<br></strong>
 										</h3>
 										<div class="infor_btn">
-											<a href="movie_board_4.html">ÏÉÅÏÑ∏Î≥¥Í∏∞</a>
+											<a href="movie_board_4.html">ªÛºº∫∏±‚</a>
 										</div>
 									</div>
 								</div>
@@ -379,14 +378,14 @@
 							</div>
 
 						</div>
-						<!-- ÎëêÎ≤àÏß∏ Ï§Ñ -->
+						<!-- µŒπ¯¬∞ ¡Ÿ -->
 						<div class="swiper-container2" style="margin-top:60px;">
 							<div class="chart_cont1 swiper-wrapper">
 								<div>
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m5.jpg"
-												srcset="assets/img/poster01@2.jpg 2x" alt="ÎèÑÍµ¥">
+												srcset="assets/img/poster01@2.jpg 2x" alt="µµ±º">
 										</figure>
 										<div class="rank">
 											<strong>5</strong>
@@ -401,7 +400,7 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>ÏúÑÌîåÎûòÏâ¨<br>
+											<span class="icon a15 ir_pm">12ºº</span> <strong>¿ß«√∑°Ω¨<br>
 											<br></strong>
 										</h3>
 										<div style="font-size: 100px;"></div>
@@ -411,7 +410,7 @@
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m6.jpg"
-												srcset="assets/img/poster02@2.jpg 2x" alt="ÏÇºÏßÑ">
+												srcset="assets/img/poster02@2.jpg 2x" alt="ªÔ¡¯">
 										</figure>
 										<div class="rank">
 											<strong>6</strong>
@@ -424,8 +423,8 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>Îã§Îßå
-												ÏïÖÏóêÏÑú Íµ¨ÌïòÏÜåÏÑú ÌååÏù¥ÎÑêÏª∑</strong>
+											<span class="icon a15 ir_pm">12ºº</span> <strong>¥Ÿ∏∏
+												æ«ø°º≠ ±∏«œº“º≠ ∆ƒ¿Ã≥Œƒ∆</strong>
 										</h3>
 										<div class="infor_btn"></div>
 									</div>
@@ -434,7 +433,7 @@
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m7.jpg"
-												srcset="assets/img/poster03@2.jpg 2x" alt="Îã¥Î≥¥">
+												srcset="assets/img/poster03@2.jpg 2x" alt="¥„∫∏">
 										</figure>
 										<div class="rank">
 											<strong>7</strong>
@@ -446,7 +445,7 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>ÎØ∏Ïä§ÌÑ∞Ìä∏Î°Ø:ÎçîÎ¨¥ÎπÑ<br>
+											<span class="icon a15 ir_pm">12ºº</span> <strong>πÃΩ∫≈Õ∆Æ∑‘:¥ıπ´∫Ò<br>
 											</strong>
 										</h3>
 										<div class="infor_btn"></div>
@@ -456,7 +455,7 @@
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m8.jpg"
-												srcset="assets/img/poster03@2.jpg 2x" alt="ÎÖ∏Ìä∏Î∂Å">
+												srcset="assets/img/poster03@2.jpg 2x" alt="≥Î∆Æ∫œ">
 										</figure>
 										<div class="rank">
 											<strong>8</strong>
@@ -468,7 +467,7 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a19 ir_pm">15ÏÑ∏</span> <strong>ÌÖåÎÑ∑<br>
+											<span class="icon a19 ir_pm">15ºº</span> <strong>≈◊≥›<br>
 											<br></strong>
 										</h3>
 										<div class="infor_btn"></div>
@@ -478,14 +477,14 @@
 							</div>
 						</div>
 						
-						<!-- ÏÑ∏Î≤àÏß∏ Ï§Ñ -->
+						<!-- ººπ¯¬∞ ¡Ÿ -->
 						<div class="swiper-container2" style="margin-top:60px;">
 							<div class="chart_cont1 swiper-wrapper">
 								<div>
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m9.jpg"
-												srcset="assets/img/poster01@2.jpg 2x" alt="ÎèÑÍµ¥">
+												srcset="assets/img/poster01@2.jpg 2x" alt="µµ±º">
 										</figure>
 										<div class="rank">
 											<strong>9</strong>
@@ -500,7 +499,7 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>ÌéòÏù¥Ìä∏ Ïä§ÌÖåÏù¥ ÎÇòÏù¥Ìä∏ Ìó§Î∏êÏ¶àÌïÑ Ï†ú3Ïû• Ïä§ÌîÑÎßÅ ÏÜ°
+											<span class="icon a15 ir_pm">12ºº</span> <strong>∆‰¿Ã∆Æ Ω∫≈◊¿Ã ≥™¿Ã∆Æ «Ï∫Ï¡Ó«  ¡¶3¿Â Ω∫«¡∏µ º€
 											</strong>
 										</h3>
 										<div style="font-size: 100px;"></div>
@@ -510,7 +509,7 @@
 									<div class="poster">
 										<figure>
 											<img src="assets/img/m10.jpg"
-												srcset="assets/img/poster02@2.jpg 2x" alt="ÏÇºÏßÑ">
+												srcset="assets/img/poster02@2.jpg 2x" alt="ªÔ¡¯">
 										</figure>
 										<div class="rank">
 											<strong>10</strong>
@@ -523,8 +522,8 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>Îã§Îßå
-												21 Î∏åÎ¶øÏßÄ: ÌÖåÎü¨ ÏÖßÎã§Ïö¥<br><br></strong>
+											<span class="icon a15 ir_pm">12ºº</span> <strong>¥Ÿ∏∏
+												21 ∫Í∏¥¡ˆ: ≈◊∑Ø ºÀ¥ŸøÓ<br><br></strong>
 										</h3>
 										<div class="infor_btn"></div>
 									</div>
@@ -545,7 +544,7 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12ÏÑ∏</span> <strong>HER<br><br>
+											<span class="icon a15 ir_pm">12ºº</span> <strong>HER<br><br>
 											</strong>
 										</h3>
 										<div class="infor_btn"></div>
@@ -567,7 +566,7 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a19 ir_pm">15ÏÑ∏</span> <strong>GET OUT<br>
+											<span class="icon a19 ir_pm">15ºº</span> <strong>GET OUT<br>
 											<br></strong>
 										</h3>
 										<div class="infor_btn"></div>
@@ -585,13 +584,13 @@
 
 
 
-	<!-- ÏûêÎ∞îÏä§ÌÅ¨Î¶ΩÌä∏ ÎùºÏù¥Î∏åÎü¨Î¶¨ -->
+	<!-- ¿⁄πŸΩ∫≈©∏≥∆Æ ∂Û¿Ã∫Í∑Ø∏Æ -->
 	<script src="assets/js/jquery.min_1.12.4.js"></script>
 	<script src="assets/js/modernizr-custom.js"></script>
 	<script src="assets/js/ie-checker.js"></script>
 	<script src="assets/js/swiper.min.js"></script>
 	<script>
-		//Î∞∞ÎÑà Ïù¥ÎØ∏ÏßÄ Ïä¨ÎùºÏù¥Îìú
+		//πË≥  ¿ÃπÃ¡ˆ ΩΩ∂Û¿ÃµÂ
 		var mySwiper = new Swiper('.swiper-container', {
 			navigation : {
 				nextEl : '.swiper-button-next',
@@ -606,7 +605,7 @@
 			},
 		});
 
-		//ÏòÅÌôîÏ∞®Ìä∏ Ïù¥ÎØ∏ÏßÄ Ïä¨ÎùºÏù¥Îìú
+		//øµ»≠¬˜∆Æ ¿ÃπÃ¡ˆ ΩΩ∂Û¿ÃµÂ
 		var mySwiper = new Swiper('.swiper-container2', {
 			slidesPerView : 4,
 			spaceBetween : 24,
@@ -632,7 +631,6 @@
 	</script>
 </body>
 </html>
-
 
 
 

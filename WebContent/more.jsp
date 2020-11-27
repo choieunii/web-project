@@ -54,8 +54,7 @@ h5 {
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
-								alt="teamlogo" onclick="location.href='mega292_13.html'"></em><br>
+						<a href="#"> <em><img src="assets/img/teamlogo_made.png"></em><br>
 						</a>
 					</h1>
 				</div>

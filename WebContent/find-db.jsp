@@ -6,7 +6,6 @@
 <head>
 </head>
 <body>
-<h4>로그인 페이지</h4>
 <%
    Connection conn = null;
    Statement stmt = null;
@@ -24,17 +23,22 @@
 
       stmt = conn.createStatement();
       
-      String sql = "select * from members where name = ' "+ name + "'";
+      String sql = "select * from members where name ='"+ name + "'";
       rs = stmt.executeQuery(sql);
-      while(rs.next()){	// 이 라인에서 문제가 생기는 것 같음
-    	if(birth.equals(rs.getString("birth")) && email.equals(rs.getString("email"))){
+     if(rs != null){
+         while (rs.next()) { // 이 라인에서 문제가 생기는 것 같음
+    		if(birth.equals(rs.getString("birth")) && email.equals(rs.getString("email"))){
+    			System.out.println(rs.getString("name"));      		
+             	System.out.println(rs.getString("birth"));
+          		System.out.println(rs.getString("email"));
+          		System.out.println(rs.getString("code"));
 			%>
 			<div style="text-align: center;">
 	  			<script type="text/javascript">
-	  				var value = prompt("코드를 입력하세요: code >> " + rs.getInt("code"));
-	  				if(value == rs.getInt("code")){
-	  					alert("아이디: " + rs.getString("id") + "<br>" 
-	  							+ "패스워드: " + rs.getString("pw"));
+	  				alert("찾기");
+	  				var value = prompt("코드를 입력하세요" + rs.getString("code"));
+	  				if(value.equals(rs.getString("code"))){
+	  					alert("아이디: " + rs.getString("id")+(" 패스워드: " + rs.getString("pw"));
 		  				response.sendRedirect("./main.jsp");
 	  				}else{
 	  					alert("다시 시도해주세요.");
@@ -43,7 +47,9 @@
 	  			</script>
 	  		</div>
 			<%
-	  	} // end of if
+            }
+         }	// end of while
+	  } // end of if
 	  	else{
 	  		%>
 			<div style="text-align: center;">
@@ -53,8 +59,7 @@
 	  			</script>
 	  		</div>
 			<%
-	  	}
-      } // end of while      
+	  	}// end of try    
    	}catch(Exception e){ out.println("DB연동오류입니다.:"+e.getMessage()); } // end of try-catch
 %>
 </body>

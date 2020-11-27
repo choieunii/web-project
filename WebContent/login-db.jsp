@@ -6,9 +6,27 @@
 %>
 <html>
 <head>
+<style>
+body {
+	background-color: #f8f9fa;
+	margin: 100px 170px 100px 170px;
+	position: relative;
+}
+</style>
 </head>
 <body>
-<%
+	<header id="header" align="center">
+					<h1>
+					<a href="#"> 
+                    	<em>
+                     	<img src="assets/img/teamlogo_made.png" alt="teamlogo" height="40px" width="150px">
+                     	<hr>
+                     	</em>
+                  	</a>
+					</h1>
+	</header>
+	<br><br><br><br>
+   <%
    Connection conn = null;
    Statement stmt = null;
    ResultSet rs = null;
@@ -24,14 +42,11 @@
       stmt = conn.createStatement();
 
       String sql = "select * from members where id = '" + id + "'";
-      System.out.print(sql);
+      
       rs = stmt.executeQuery(sql);
       if (rs != null) {
-         System.out.print("nnnull");
-         while (rs.next()) { // 이 라인에서 문제가 생기는 것 같음
-      System.out.println(rs.getString("pw"));
+         while (rs.next()) {
       if (pw.equals(rs.getString("pw"))) {
-         System.out.println(rs.getString("pw"));
          session.setAttribute("name", rs.getString("name"));
    %>
    <div style="text-align: center;">
@@ -42,7 +57,6 @@
       </h1>
       <br> <br> <a href="main.jsp">메인 페이지로 이동하기</a>
    </div>
-
    <%
       break;
    } else {
@@ -53,7 +67,7 @@
       </script>
       <h1>아이디나 비밀번호가 일치하지 않습니다</h1>
       <br> <br> <a href="login.jsp">로그인 페이지로 이동하기</a>
-	</div>
+   </div>
    <%
       }
    } // end of While

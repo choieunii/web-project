@@ -23,7 +23,6 @@
 
 </head>
 <body>
-
 	<header id="header">
 		<div class="container">
 			<div class="row">
@@ -33,10 +32,10 @@
 								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
 						</a>
 					</h1>
-
-				</div>
-			</div>
-		</div>
+					
+                </div>
+            </div>
+        </div>
 	</header>
 	<!-- //header -->
 
@@ -61,10 +60,8 @@
                             <% 
                             } 
                             %>
-							<li class="purple"><a href="#"
-								onclick="location.href='movie_board_main.html'">영화 게시판</a></li>
-							<li class="purple"><a href="#"
-								onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
+							<li class="purple"><a href="#" onclick="location.href='board/movie_board_main.jsp'">영화 게시판</a></li>
+                            <li class="purple"><a href="#" onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
 						</ul>
 					</div>
 				</div>
@@ -486,13 +483,6 @@
 	</script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 

@@ -19,13 +19,13 @@ body {
 					<h1>
 					<a href="#"> 
                     	<em>
-                     	<img src="assets/img/teamlogo_made.png" alt="teamlogo" height="40px" width="150px">
+                     	<img src="assets/img/teamlogo_made.png" alt="teamlogo" width="200px">
                      	<hr>
                      	</em>
                   	</a>
 					</h1>
 	</header>
-	<br><br><br><br>
+	<br><br>
    <%
    Connection conn = null;
    Statement stmt = null;

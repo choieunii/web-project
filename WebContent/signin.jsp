@@ -252,7 +252,7 @@ $(document).ready(function(){
 	<div id="box_s">
 		<div id="title_s">&nbsp;&nbsp;회 원 가 입</div>
 		<form id="signin_form" method="post" action="signin-db.jsp">
-		<h3>1. 회원정보 입력</h3>
+		<h3><b>1. 회원정보 입력</b></h3>
 		<h5>회원정보를 입력해주세요.</h5>
 		<div>
 			<table id="body1_s">
@@ -285,7 +285,7 @@ $(document).ready(function(){
 			<br><br>
 		</div>
 		
-		<h3>2. 약관동의 및 정보활용동의</h3>
+		<h3><b>2. 약관동의 및 정보활용동의</b></h3>
 		<h5>
 			충무로영화관 서비스 이용을 위한 약관을	동의해주세요.&emsp;
 			<input type="button" class="check" onClick="window.open('more.jsp')" value=" 자세히 보기 " style="width: 100px;"/><br> 

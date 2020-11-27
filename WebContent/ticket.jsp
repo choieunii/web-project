@@ -41,12 +41,14 @@ String getdate = request.getParameter("date");
 int movieid = Integer.parseInt(request.getParameter("movieid"));
 int theaterid = Integer.parseInt(request.getParameter("theaterid"));
 int timeid = Integer.parseInt(request.getParameter("timeid"));
+String userid = request.getParameter("userid");
+System.out.print(userid + "유저아이디");
 String month = getdate.substring(0, 2);
 String day = getdate.substring(3, 5);
 String wday = getdate.substring(5, 6);
 String date = "2020-" + month + "-" + day + wday;
 String img = "";
-String seat = "", tmp="";
+String seat = "", tmp = "";
 %>
 <%
 	Connection conn = null;
@@ -65,7 +67,6 @@ try {
 	sql_img = "select img from movie where movieid=" + movieid;
 	sql_seat = "select seatinfo from ticket where movieid='" + movieid + "' and theaterid='" + theaterid
 	+ "' and timeid='" + timeid + "'";
-	System.out.println(sql_seat);
 	rs = stmt.executeQuery(sql_img);
 	rs2 = stmt2.executeQuery(sql_seat);
 } catch (Exception e) {
@@ -117,6 +118,7 @@ if (rs2 != null) {
 	function submitaction() {
 		var seatinfo = $(".modal-seat-info").html();
 		$("#ticketseat").val(seatinfo);
+		$("#userid").val("<%=userid%>");
 		$("#ticket-insert").submit();
 	}
 </script>
@@ -129,7 +131,7 @@ if (rs2 != null) {
 				<div class="header clearfix">
 					<h1>
 						<a href="#"> <em><img src="assets/img/teamlogo.png"
-								alt="teamlogo" onclick="location.href='main.html'"></em><br>
+								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
 							<strong><img src="assets/img/logo-sub.png"
 								alt="LIFE THEATER"></strong>
 						</a>
@@ -167,8 +169,9 @@ if (rs2 != null) {
 							value="<%=movieid%>" /> <input id="tickettheater"
 							name="theaterid" type="hidden" value="<%=theaterid%>" /> <input
 							id="tickettime" name="timeid" type="hidden" value="<%=timeid%>" />
-						<input id="ticketseat" name="seatinfo" type="hidden" /> 영화시작
-						10분전에 입장해주시길 바랍니다.<br>
+						<input id="ticketseat" name="seatinfo" type="hidden" /> <input
+							id="userid" name="userid" type="hidden" /> 영화시작 10분전에 입장해주시길
+						바랍니다.<br>
 					</div>
 					<div class="modal-footer"
 						style="display: flex; flex-direction: row; justify-content: center">
@@ -297,7 +300,8 @@ if (rs2 != null) {
 							</div>
 							<div class="myseatinfo">
 								<p class="moreinfo" style="text-align: center">선택좌석</p>
-								<p class="chooseseatinfo" style="font-size: 20px; margin-left:20px;"></p>
+								<p class="chooseseatinfo"
+									style="font-size: 20px; margin-left: 20px;"></p>
 							</div>
 						</div>
 					</div>

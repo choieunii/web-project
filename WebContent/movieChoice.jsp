@@ -4,6 +4,11 @@
 <%
 	request.setCharacterEncoding("utf-8");
 %>
+<%
+	HttpSession sessionid = request.getSession(false);
+String s = (String) session.getAttribute("id");
+System.out.println(s + "세션정보");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +36,18 @@
 <script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
 <script src="board/js/bootstrap.min.js"></script>
 <script>
+var userid = "<%=s%>";
+$(document).ready(
+	function(){
+		console.log("session"+userid);
+		if(userid=="null")
+			{
+			console.log("로그인");
+			alert("로그인이 필요합니다.");
+			document.location.href="main.jsp";
+			}
+	}
+)
 	$(document)
 			.ready(
 					function() {
@@ -76,6 +93,7 @@
 		$("#inputid").val(movieid);
 		$("#inputid2").val(theaterid);
 		$("#inputid3").val(timeid);
+		$("#inputid4").val(userid);
 		$("#ticket").submit();
 	}
 </script>
@@ -89,7 +107,7 @@
 				<div class="header clearfix">
 					<h1>
 						<a href="#"> <em><img src="assets/img/teamlogo.png"
-								alt="teamlogo" onclick="location.href='main.html'"></em><br>
+								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
 							<strong><img src="assets/img/logo-sub.png"
 								alt="LIFE THEATER"></strong>
 						</a>
@@ -101,49 +119,51 @@
 	</header>
 	<!-- //header -->
 	<!-- Modal -->
-	<form action ="ticket.jsp" method="post" name="ticket" id="ticket">
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document"
-			style="text-align: center; width: 30%;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel"
-						style="font-size: 20px; font-weight: bold; margin-left: 7px;">예약정보확인</h4>
-				</div>
-				<div class="modal-body">
-				<div class="modal-date"
-						style="font-size: 15px; font-weight: bold;"></div>
-					<br>
-					<div class="modal-movie"
-						style="font-size: 15px; font-weight: bold;"></div>
-					<br>
-					<div class="modal-theater"
-						style="font-size: 15px; font-weight: bold;"></div>
-					<br>
-					<div class="modal-time"></div>
-					<br>
-					<input id="inputdate" name="date" type="hidden"/>
-					<input id="inputmovie" name="movie" type="hidden"/>
-					<input id="inputtheater" name="theater" type="hidden"/>
-					<input id="inputtime" name="time" type="hidden"/> 
-					<input id="inputid" name="movieid" type="hidden"/>
-					<input id="inputid2" name="theaterid" type="hidden"/>
-					<input id="inputid3" name="timeid" type="hidden"/>
-					선택하신 정보가 맞습니까?
-				</div>
-				<div class="modal-footer"
-					style="display: flex; flex-direction: row; justify-content: center">
-					<input type="submit" class="btn btn-primary" data-dismiss="modal" onclick="submitaction()" value="예매"></button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+	<form action="ticket.jsp" method="post" name="ticket" id="ticket">
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document"
+				style="text-align: center; width: 30%;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel"
+							style="font-size: 20px; font-weight: bold; margin-left: 7px;">예약정보확인</h4>
+					</div>
+					<div class="modal-body">
+						<div class="modal-date"
+							style="font-size: 15px; font-weight: bold;"></div>
+						<br>
+						<div class="modal-movie"
+							style="font-size: 15px; font-weight: bold;"></div>
+						<br>
+						<div class="modal-theater"
+							style="font-size: 15px; font-weight: bold;"></div>
+						<br>
+						<div class="modal-time"></div>
+						<br> <input id="inputdate" name="date" type="hidden" /> <input
+							id="inputmovie" name="movie" type="hidden" /> <input
+							id="inputtheater" name="theater" type="hidden" /> <input
+							id="inputtime" name="time" type="hidden" /> <input id="inputid"
+							name="movieid" type="hidden" /> <input id="inputid2"
+							name="theaterid" type="hidden" /> <input id="inputid3"
+							name="timeid" type="hidden" />
+							<input id="inputid4"
+							name="userid" type="hidden" /> 선택하신 정보가 맞습니까?
+					</div>
+					<div class="modal-footer"
+						style="display: flex; flex-direction: row; justify-content: center">
+						<input type="submit" class="btn btn-primary" data-dismiss="modal"
+							onclick="submitaction()" value="예매">
+						</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</form>
 	<section id="banner">
 		<%
@@ -152,7 +172,7 @@
 		String moviename;
 		String theatername;
 		String time;
-		String i=null, j=null, k = null;
+		String i = null, j = null, k = null;
 		Connection conn = null;
 		Statement stmt1 = null;
 		Statement stmt2 = null;
@@ -211,11 +231,11 @@
 							<%
 								while (movie_rs.next()) {
 								moviename = movie_rs.getString("moviename");
-								i=movie_rs.getString("movieid");
+								i = movie_rs.getString("movieid");
 							%>
 							<button type="button" class="moviebutton" id="<%=i%>"><%=moviename%></button>
 							<%
-							}
+								}
 							%>
 						</div>
 					</div>
@@ -225,11 +245,11 @@
 							<%
 								while (theater_rs.next()) {
 								theatername = theater_rs.getString("theatername");
-								j=theater_rs.getString("theaterid");
+								j = theater_rs.getString("theaterid");
 							%>
-							<button type="button" class="theaterbutton" id="<%=j %>"><%=theatername%></button>
+							<button type="button" class="theaterbutton" id="<%=j%>"><%=theatername%></button>
 							<%
-							}
+								}
 							%>
 						</div>
 					</div>
@@ -243,14 +263,14 @@
 								while (time_rs.next()) {
 									DBstart = time_rs.getString("time");
 									DBfinish = time_rs.getString("finishtime");
-									time = DBstart.substring(0, 5)+"~"+ DBfinish.substring(0,5);
-									k=time_rs.getString("timeid");
+									time = DBstart.substring(0, 5) + "~" + DBfinish.substring(0, 5);
+									k = time_rs.getString("timeid");
 								%>
 								<button type="button" class="timebutton" id="<%=k%>">
 									<p><%=time%></p>
 								</button>
 								<%
-								}
+									}
 								%>
 							</div>
 						</div>

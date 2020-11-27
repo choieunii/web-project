@@ -20,45 +20,50 @@
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <%
-int temp = 0, cnt;
+	int temp = 0, cnt;
 int new_id = 0;
 int movieid, theaterid, timeid = 0;
-String seatinfo=null, seat=null;
+String seatinfo = null, seat = null;
+String userid = null;
 Connection conn = null;
 Statement stmt = null;
+Statement stmt2 = null;
 ResultSet rs = null;
-String sql_update, seat_check;
+String sql_update, seat_check, sql_user;
 
-try{
+try {
 	Class.forName("com.mysql.jdbc.Driver");
 	String url = "jdbc:mysql://localhost:3306/web?serverTimezone=UTC";
-	conn = DriverManager.getConnection(url,"root","0000");
-	stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
-	sql_update="select count(ticketid) as cnt, max(ticketid) as max_id from ticket";
-	rs=stmt.executeQuery(sql_update);
-}
-catch(Exception e){
+	conn = DriverManager.getConnection(url, "root", "0000");
+	stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	stmt2 = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+	sql_update = "select count(ticketid) as cnt, max(ticketid) as max_id from ticket";
+	rs = stmt.executeQuery(sql_update);
+} catch (Exception e) {
 	out.println("DB 연동 오류 입니다.:" + e.getMessage());
 }
-if(rs!= null){
-while(rs.next()){
-	cnt = Integer.parseInt(rs.getString("cnt"));
-	if(cnt!=0)
-		new_id = Integer.parseInt(rs.getString("max_id"));
-}}
+if (rs != null) {
+	while (rs.next()) {
+		cnt = Integer.parseInt(rs.getString("cnt"));
+		if (cnt != 0)
+	new_id = Integer.parseInt(rs.getString("max_id"));
+	}
+}
 new_id++;
 movieid = Integer.parseInt(request.getParameter("movieid"));
 theaterid = Integer.parseInt(request.getParameter("theaterid"));
 timeid = Integer.parseInt(request.getParameter("timeid"));
 seat = request.getParameter("seatinfo");
-seatinfo = seat.substring(4,6);
+userid = request.getParameter("userid");
+seatinfo = seat.substring(4, 6);
 
-sql_update = "INSERT INTO ticket (ticketid, timeid, movieid, theaterid, seatinfo) VALUES ('"+new_id+"','"+timeid+"','"+movieid+"','"+theaterid+"','"+seatinfo+"')";
-
-try{
+sql_update = "INSERT INTO ticket (ticketid, timeid, movieid, theaterid, seatinfo) VALUES ('" + new_id + "','" + timeid
+		+ "','" + movieid + "','" + theaterid + "','" + seatinfo + "')";
+sql_user = "INSERT INTO reservation (userid, ticketid) VALUES ('" + userid + "','" + new_id + "')";
+try {
 	stmt.executeUpdate(sql_update);
-}
-catch(Exception e){
+	stmt2.executeUpdate(sql_user);
+} catch (Exception e) {
 	out.println("DB연동 오류입니다2:" + e.getMessage());
 }
 %>
@@ -70,7 +75,7 @@ catch(Exception e){
 				<div class="header clearfix">
 					<h1>
 						<a href="#"> <em><img src="assets/img/teamlogo.png"
-								alt="teamlogo" onclick="location.href='main.html'"></em><br>
+								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
 							<strong><img src="assets/img/logo-sub.png"
 								alt="LIFE THEATER"></strong>
 						</a>
@@ -83,12 +88,16 @@ catch(Exception e){
 	<!-- //header -->
 	<section id="banner">
 		<div class="maindiv" style="margin: 100px">
-				<div style="display:flex; flex-direction:column; text-align:center; justify-content:center; align-content:center;">
-					<h1 class="cover-heading" style="font-size:50px; font-weight:bold;">예매완료</h1>
-					<p class="lead" style="font-size: 30px; font-weight:bold; margin-top:30px;">
+			<div
+				style="display: flex; flex-direction: column; text-align: center; justify-content: center; align-content: center;">
+				<h1 class="cover-heading"
+					style="font-size: 50px; font-weight: bold;">예매완료</h1>
+				<p class="lead"
+					style="font-size: 30px; font-weight: bold; margin-top: 30px;">
 					이용해 주셔서 감사합니다.</p>
-						<a href="#" onclick="location.href='main.html'"style="font-size: 30px; font-weight:bold; margin-top:30px;">Home</a>
-				</div>
+				<a href="#" onclick="location.href='main.jsp'"
+					style="font-size: 30px; font-weight: bold; margin-top: 30px;">Home</a>
+			</div>
 		</div>
 	</section>
 </body>

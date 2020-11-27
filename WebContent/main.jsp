@@ -23,6 +23,7 @@
 
 </head>
 <body>
+
 	<header id="header">
 		<div class="container">
 			<div class="row">
@@ -34,160 +35,6 @@
 								alt="LIFE THEATER"></strong>
 						</a>
 					</h1>
-					
-                    <div class="bm_right">
-                        <ul>
-                            <li class="purple"><a href="#" onclick="location.href='login.jsp'">로그인 </a></li>
-                            <li class="purple"><a href="#" onclick="location.href='board/movie_board_main.jsp'">영화 게시판</a></li>
-                            <li class="purple"><a href="#"  onclick="location.href='movieChoice.jsp'">영화 예매</a></li>                                                    
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slider">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide ss1">
-                        <div class="container">
-                            <div class="row">
-                                <h2>도굴 <em>***</em></h2>
-                                <p>영화소개</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide ss2">
-                        <div class="container">
-                            <div class="row">
-                                <h2>삼진그룹 영어 토익반 <em>***</em></h2>
-                                <p>영화소개</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide ss3">
-                        <div class="container">
-                            <div class="row">
-                                <h2>담보 <em>***</em></h2>
-                                <p>영화소개</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </div>
-    </section>
-    <!-- //banner -->
-    
-    
-    <section id="movie">
-        <div class="container">
-            <div class="row">
-                <div class="movie">
-                    <h2 class="ir_so">영화 예매</h2>
-                    <div class="movie_title">
-                        <ul>
-                            <li class="active" style="width:100%"><a href="#">박스 오피스</a></li>
-                        </ul>
-                    </div>
-                    <div class="movie_chart">
-                        <div class="swiper-container2">
-                            <div class="chart_cont1 swiper-wrapper">
-                                <div>
-                                    <div class="poster">
-                                        <figure>
-                                            <img src="assets/img/m1.jpg" srcset="assets/img/poster01@2.jpg 2x"  alt="도굴">
-                                        </figure>
-                                        <div class="rank"><strong>1</strong></div>                                                                            
-                                        
-                                        <div class="mx">
-                                            <span class="icon m ir_pm">MX</span>
-                                            <span class="icon b ir_pm">Boutique</span>
-                                        
-                                        </div>
-                            
-                                    </div>
-                                    <div class="infor">
-                                        <h3><span class="icon a15 ir_pm">12세</span> <strong>도굴<br><br></strong></h3>
-                                        <div style="font-size: 100px;">                                   
-                                        </div>
-                                        <div class="infor_btn">
-                                            <a href="board/movie_board_1.jsp">상세보기</a>
-                                            <a href="#">예매하기</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="poster">
-                                        <figure>
-                                            <img src="assets/img/m2.jpg" srcset="assets/img/poster02@2.jpg 2x"  alt="삼진">
-                                        </figure>
-                                        <div class="rank"><strong>2</strong></div>                                      
-                                                                              
-                                        <div class="mx">
-                                            <span class="icon m ir_pm">MX</span>
-                                            <span class="icon b ir_pm">Boutique</span>
-                                        </div>
-                                    </div>
-                                    <div class="infor">
-                                        <h3><span class="icon a15 ir_pm">12세</span> <strong>삼진그룹 영어 토익반</strong></h3>
-                                        <div class="infor_btn">
-                                            <a href="board/movie_board_2.jsp">상세보기</a>
-                                            <a href="#">예매하기</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="poster">
-                                        <figure>
-                                            <img src="assets/img/m3.jpg" srcset="assets/img/poster03@2.jpg 2x"  alt="담보">
-                                        </figure>
-                                        <div class="rank"><strong>3</strong></div>
-                                        <div class="mx">
-                                            <span class="icon m ir_pm">MX</span>
-                                            <span class="icon b ir_pm">Boutique</span>
-                                        </div>
-                                    </div>
-                                    <div class="infor">
-                                        <h3><span class="icon a15 ir_pm">12세</span> <strong>담보<br><br></strong></h3>
-                                        <div class="infor_btn">
-                                            <a href="board/movie_board_3.jsp">상세보기</a>
-                                            <a href="#">예매하기</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="poster">
-                                        <figure>
-                                            <img src="assets/img/m4.jpg" srcset="assets/img/poster03@2.jpg 2x"  alt="노트북">
-                                        </figure>
-                                        <div class="rank"><strong>4</strong></div>
-                                        <div class="mx">
-                                            <span class="icon m ir_pm">MX</span>
-                                            <span class="icon b ir_pm">Boutique</span>
-                                        </div>
-                                    </div>
-                                    <div class="infor">
-                                        <h3><span class="icon a19 ir_pm">15세</span> <strong>노트북<br><br></strong></h3>
-                                        <div class="infor_btn">
-                                            <a href="board/movie_board_4.jsp">상세보기</a>
-                                            <a href="#">예매하기</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <!-- //chart_cont1-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //movie -->
-   
 
 				</div>
 			</div>
@@ -631,6 +478,13 @@
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

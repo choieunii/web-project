@@ -146,9 +146,8 @@ $(document).ready(function(){
 	</header>
 	<br>
 	<div id="box">
-		<div id="title">
-			아이디 찾기/비밀번호 찾기 <small>(간편찾기)</small>
-		</div>
+		<div id="title">아이디 찾기/비밀번호 찾기 <small>(간편찾기)</small></div>
+		<form id="find_form" action="./find-db.jsp" method="post">
 		<table id="findIdPw">
 			<tr>
 				<th>이름</th>
@@ -165,8 +164,9 @@ $(document).ready(function(){
 		</table>
 		<br>
 		<div align="center">
-			<input type="button" id="search" value="아이디/비밀번호 찾기">
+			<input type="submit" id="search" value="아이디/비밀번호 찾기">
 		</div>
+		</form>
 	</div>
 </body>
 

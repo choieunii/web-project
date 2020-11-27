@@ -35,24 +35,25 @@ try{
 	conn  = DriverManager.getConnection(jdbcurl, "root", "0000");
     stmt = conn.createStatement();
 	// code(int), name, birth, id, pw, email, marketing(int)
-	rs = stmt.executeQuery("selec id from member where id="+id);
+	rs = stmt.executeQuery("selec id from member where id='"+id+"'");
 	
-	if(rs.next()){ 
-	%>
+	if(rs != null){
+		%>
 		<center>
 			<br><br>
 			<h4>이미 사용중인 Id 입니다.</h4>
 		</center>		
 	<%
-	}else{ 
+		}// end of if
+		else{ 
 	%>
 		<center>
 			<br><br>
 			<h4>입력하신 <%=id%>는 사용가능 합니다.</h4>
 		</center>		
 	<%
-	}
-}
+		}// end of else
+}// end of try
 catch(Exception e){
 	System.out.println("DB 연동 오류입니다 : " + e.getMessage());
 	e.printStackTrace();

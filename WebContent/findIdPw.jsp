@@ -158,7 +158,7 @@ $(document).ready(function(){
 			</tr>
 			<tr>
 				<th>이메일</th>
-				<td><input type="text" name="email" id="email" placeholder="이메일">
+				<td><input type="text" name="email" id="email" placeholder="이메일" width="100px">
 			</tr>
 		</table>
 		<br>

@@ -48,6 +48,7 @@ body {
          while (rs.next()) {
       if (pw.equals(rs.getString("pw"))) {
          session.setAttribute("name", rs.getString("name"));
+         session.setMaxInactiveInterval(60*60);	// 세션 유지시간 1시간;
    %>
    <div style="text-align: center;">
       <script type="text/javascript">

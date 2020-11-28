@@ -14,7 +14,6 @@
    String name = request.getParameter("name");
    String birth = request.getParameter("birth");
    String email = request.getParameter("email");
-   int code; 
    
    try {
       Class.forName("com.mysql.jdbc.Driver");
@@ -25,42 +24,36 @@
       
       String sql = "select * from members where name ='"+ name + "'";
       rs = stmt.executeQuery(sql);
-     if(rs != null){
-         while (rs.next()) { // 이 라인에서 문제가 생기는 것 같음
-    		if(birth.equals(rs.getString("birth")) && email.equals(rs.getString("email"))){
-    			System.out.println(rs.getString("name"));      		
-             	System.out.println(rs.getString("birth"));
-          		System.out.println(rs.getString("email"));
-          		System.out.println(rs.getString("code"));
-			%>
-			<div style="text-align: center;">
-	  			<script type="text/javascript">
-	  				alert("찾기");
-	  				var value = prompt("코드를 입력하세요" + rs.getString("code"));
-	  				if(value.equals(rs.getString("code"))){
-	  					alert("아이디: " + rs.getString("id")+(" 패스워드: " + rs.getString("pw"));
-		  				response.sendRedirect("./main.jsp");
-	  				}else{
-	  					alert("다시 시도해주세요.");
-		  				response.sendRedirect("./findIdPw.jsp");
-	  				}
-	  			</script>
-	  		</div>
-			<%
-            }
-         }	// end of while
-	  } // end of if
-	  	else{
-	  		%>
-			<div style="text-align: center;">
-	  			<script type="text/javascript">
-	  				alert("정보를 다시 입력해주세요.");
-	  				response.sendRedirect("./findIdPw.jsp");
-	  			</script>
-	  		</div>
-			<%
-	  	}// end of try    
-   	}catch(Exception e){ out.println("DB연동오류입니다.:"+e.getMessage()); } // end of try-catch
-%>
+      
+      if (rs.next()) {
+    	  System.out.println("not null");
+    	  if(birth.equals(rs.getString("birth")) && email.equals(rs.getString("email"))){	  
+   %>
+   			<script type="text/javascript">
+   				alert("아이디: <%=rs.getString("id")%> \n패스워드: <%=rs.getString("pw")%>");
+				location.href="./main.jsp";
+   			</script>
+   <%
+      		} else {
+   %>
+   			<script type="text/javascript">
+   				alert("입력하신 정보를 다시 확인해주세요.");
+   				history.go(-1);
+   			</script>
+   <%
+      		}
+      }
+      else{
+    %>
+  			<script type="text/javascript">
+  				alert("가입된 아이디(비밀번호)가 없습니다.");
+				location.href="./main.jsp";
+  			</script>
+    <%
+      }
+   } catch (Exception e) {
+   		out.println("DB 연동 오류입니다 : " + e.getMessage());
+   }
+   %>
 </body>
 </html>

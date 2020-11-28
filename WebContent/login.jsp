@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+Cookie[] cookies = request.getCookies(); 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,20 +134,38 @@ font-size: 10px;
 			         return false; 
 			      }
 			});
+
+			var userId = getCookie("ID");
+			var userPw = getCookie("PW");				
+			
+			$("input[name='id']").val(userId);
+			$("input[name='pw']").val(userPw);	
 		});
+		
+		function getCookie(cookieName) {
+		    cookieName = cookieName + '=';
+		    var cookieData = document.cookie;
+		    var start = cookieData.indexOf(cookieName);
+		    var cookieValue = '';
+		    if(start != -1){
+		        start += cookieName.length;
+		        var end = cookieData.indexOf(';', start);
+		        if(end == -1)end = cookieData.length;
+		        cookieValue = cookieData.substring(start, end);
+		    }
+		    return unescape(cookieValue);
+		}
 </script>
 </head>
-
 <body>
 	<header id="header">
 		<div class="container">
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-					<a href="#"> 
-                    	<em>
-                     	<img src="assets/img/teamlogo_made.png" alt="teamlogo">
-                     	</em>
+					
+						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
+								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
                   	</a>
 					</h1>
 				</div>
@@ -162,7 +183,7 @@ font-size: 10px;
 			<div id="input_login">
 				<input name="id" id="id" type="text" placeholder="아이디"><br>
 				<input name="pw" id="pw" type="password" placeholder="비밀번호"><br>
-				&nbsp;<input type="checkbox"> 아이디 저장하기<br>
+				&nbsp;<input type="checkbox" name="save" id="save"> 아이디 저장하기<br>
 				<br> <input type="submit" value="로그인" id="login">
 				<br> <br> <small>&emsp;&emsp;
 				<a href="./findIdPw.jsp">ID/PW찾기</a>&emsp; 

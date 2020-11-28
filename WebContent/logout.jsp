@@ -4,9 +4,10 @@
 if(session != null){
 	session.invalidate();
 %>
-<script src="https://code.jquery.com/jQuery-3.5.1.js"></script>
-<script>alert("로그아웃 되었습니다")</script>
+	<script type="text/javascript">
+		alert("로그아웃 되었습니다");
+		location.href="./main.jsp";
+	</script>
 <%
-	response.sendRedirect("main.jsp");
 }
 %> 

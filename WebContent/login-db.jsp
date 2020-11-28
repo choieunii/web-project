@@ -33,7 +33,9 @@ body {
 
    String id = request.getParameter("id");
    String pw = request.getParameter("pw");
-
+   
+   String save = request.getParameter("save");
+   
    try {
       Class.forName("com.mysql.jdbc.Driver");
       String url = "jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC";
@@ -49,6 +51,11 @@ body {
       if (pw.equals(rs.getString("pw"))) {
          session.setAttribute("name", rs.getString("name"));
          session.setMaxInactiveInterval(60*60);	// 세션 유지시간 1시간;
+         
+         if(save != null){         	
+         	response.addCookie(new Cookie("ID", id));
+         	response.addCookie(new Cookie("PW", pw));
+         }
    %>
    <div style="text-align: center;">
       <script type="text/javascript">

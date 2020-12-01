@@ -74,16 +74,14 @@ try {
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo.png"
+						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
 								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
-							<strong><img src="assets/img/logo-sub.png"
-								alt="LIFE THEATER"></strong>
 						</a>
 					</h1>
-
-				</div>
-			</div>
-		</div>
+					
+                </div>
+            </div>
+        </div>
 	</header>
 	<!-- //header -->
 	<section id="banner">

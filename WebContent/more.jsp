@@ -54,13 +54,16 @@ h5 {
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo_made.png"></em><br>
+						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
+								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
 						</a>
 					</h1>
-				</div>
-			</div>
-		</div>
+					
+                </div>
+            </div>
+        </div>
 	</header>
+	<!-- //header -->
 	<br>
 
 	<button id="back" onclick="window.close()">확 인 완 료</button>

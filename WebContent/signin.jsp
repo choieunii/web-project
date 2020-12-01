@@ -235,7 +235,6 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<<<<<<< HEAD
    <header id="header">
       <div class="container">
          <div class="row">
@@ -293,7 +292,7 @@ $(document).ready(function(){
       </h5>
       <br>
       <div id="checks">
-            <input type="checkbox" id="all"> 필수항목 전체동의 <br>
+            <input type="checkbox" id="all"> 모든항목 전체동의 <br>
             <input type="checkbox" class="chk" name="agrees" id="service"> 서비스 이용약관동의(필수)<br>
             <input type="checkbox" class="chk" name="agrees" id="personal"> 개인정보 수집 및 이용동의(필수)<br> 
             <input type="checkbox" class="chk" name="agrees" id="marketing" value="marketing"> 마케팅 활용을 위한 개인정보 수집 이용<br>
@@ -305,76 +304,5 @@ $(document).ready(function(){
       <input type="reset" class="find_s" value="취소">
    </form>
    </div>
-=======
-	<header id="header">
-		<div class="container">
-			<div class="row">
-				<div class="header clearfix">
-					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
-								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
-						</a>
-					</h1>
-				</div>
-			</div>
-		</div>
-	</header>
-	<br>
-	<div id="box_s">
-		<div id="title_s">&nbsp;&nbsp;회 원 가 입</div>
-		<form id="signin_form" method="post" action="signin-db.jsp">
-		<h3><b>1. 회원정보 입력</b></h3>
-		<h5>회원정보를 입력해주세요.</h5>
-		<div>
-			<table id="body1_s">
-				<tr>
-					<th>이름</th>
-					<td><input type="text" name="name" id="name" placeholder="이름"></td>				
-				</tr>
-				<tr>
-					<th>생년월일</th>
-					<td><input type="text" name="birth" id="birth" placeholder="생년월일 8자리"></td>
-				</tr>
-				<tr>
-					<th>아이디</th>
-					<td><input type="text" name="id" id="id" placeholder="4~12자의 영문,숫자 조합 "> &emsp;
-						<input type="button"  id="idcheck" class="check" value="중복확인" style="width: 70px;"></td>
-				</tr>
-				<tr>
-					<th>비밀번호</th>
-					<td><input type="password" name="pw" id="pw" placeholder="4~12자의 영문,숫자 조합">
-				</tr>
-				<tr>
-					<th>비밀번호 확인</th>
-					<td><input type="password" name="pw2" id="pw2" placeholder="4~12자의 영문,숫자 조합">
-				</tr>
-				<tr>
-					<th>이메일 주소</th>
-					<td><input type="text" name="email" id="email" placeholder="이메일 주소를 입력해주세요. ">
-				</tr>
-			</table>
-			<br><br>
-		</div>
-		
-		<h3><b>2. 약관동의 및 정보활용동의</b></h3>
-		<h5>
-			충무로영화관 서비스 이용을 위한 약관을	동의해주세요.&emsp;
-			<input type="button" class="check" onClick="window.open('more.jsp')" value=" 자세히 보기 " style="width: 100px;"/><br> 
-		</h5>
-		<br>
-		<div id="checks">
-				<input type="checkbox" id="all"> 필수항목 전체동의 <br>
-				<input type="checkbox" class="chk" name="agrees" id="service"> 서비스 이용약관동의(필수)<br>
-				<input type="checkbox" class="chk" name="agrees" id="personal"> 개인정보 수집 및 이용동의(필수)<br> 
-				<input type="checkbox" class="chk" name="agrees" id="marketing" value="marketing"> 마케팅 활용을 위한 개인정보 수집 이용<br>
-		</div>
-		<br><br>
-		&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-		&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-		<input type="submit" class="find_s" value="회원가입">&emsp;
-		<input type="reset" class="find_s" value="취소">
-	</form>
-	</div>
->>>>>>> branch 'maiin' of https://github.com/choieunii/webproject.git
 </body>
 </html>

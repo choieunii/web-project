@@ -124,23 +124,21 @@ if (rs2 != null) {
 </script>
 </head>
 <body role="document">
-	<!-- //header -->
 	<header id="header">
 		<div class="container">
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo.png"
+						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
 								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
-							<strong><img src="assets/img/logo-sub.png"
-								alt="LIFE THEATER"></strong>
 						</a>
 					</h1>
-
-				</div>
-			</div>
-		</div>
+					
+                </div>
+            </div>
+        </div>
 	</header>
+	<!-- //header -->
 	<!-- Modal -->
 	<form action="ticket-insert.jsp" method="post" name="ticket-insert"
 		id="ticket-insert">
@@ -159,7 +157,7 @@ if (rs2 != null) {
 					</div>
 					<div class="modal-body">
 						영화이름:
-						<%=movie%>
+						<%=movie%><br>
 						<br> 극장이름:
 						<%=theater%>
 						<br> <br>

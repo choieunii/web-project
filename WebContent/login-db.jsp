@@ -38,7 +38,7 @@ body {
    
    try {
       Class.forName("com.mysql.jdbc.Driver");
-      String url = "jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC";
+      String url = "jdbc:mysql://localhost:3306/web?serverTimezone=UTC";
       conn = DriverManager.getConnection(url, "root", "0000");
 
       stmt = conn.createStatement();
@@ -49,7 +49,7 @@ body {
       if (rs != null) {
          while (rs.next()) {
       if (pw.equals(rs.getString("pw"))) {
-         session.setAttribute("name", rs.getString("name"));
+         session.setAttribute("id", rs.getString("id"));
          session.setMaxInactiveInterval(60*60);	// 세션 유지시간 1시간;
          
          if(save != null){         	
@@ -81,6 +81,17 @@ body {
    } // end of While
    %>
    <%
+      }
+      else{
+    	  %>
+    	  <div style="text-align: center;">
+      <script type="text/javascript">
+         alert("로그인 실패");
+      </script>
+      <h1>아이디가 존재하지 않습니다.</h1>
+      <br> <br> <a href="login.jsp">로그인 페이지로 이동하기</a>
+   </div>
+   <% 
       }
    } catch (Exception e) {
    out.println("DB연동오류입니다.:" + e.getMessage());

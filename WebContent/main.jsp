@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -42,14 +42,14 @@
 
 	<section id="banner">
 		<h2 class="ir_so">최신 영화 소식</h2>
+		<div class="slider">
 		<div class="banner_menu">
 			<div class="container">
 				<div class="row">
-
 					<div class="bm_right">
 						<ul>
 							<%
-                          	if(session.getAttribute("name") != null){
+                          	if(session.getAttribute("id") != null){
                            	%>
                                 <li class="purple"><a href="./logout.jsp">로그아웃 </a></li>
                            	<%
@@ -60,14 +60,13 @@
                             <% 
                             } 
                             %>
-							<li class="purple"><a href="#" onclick="location.href='board/movie_board_main.jsp'">영화 게시판</a></li>
+							<li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
                             <li class="purple"><a href="#" onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="slider">
 			<div class="swiper-container">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide ss1">
@@ -144,13 +143,9 @@
 									<div class="infor">
 										<h3>
 											<span class="icon a15 ir_pm">12세</span> <strong>도굴<br>
-											<br></strong>
+												<br></strong>
 										</h3>
 										<div style="font-size: 100px;"></div>
-										<div class="infor_btn">
-											<a href="movie_board_1.html">상세보기</a>
-
-										</div>
 									</div>
 								</div>
 								<div>
@@ -173,9 +168,6 @@
 											<span class="icon a15 ir_pm">12세</span> <strong>삼진그룹
 												영어 토익반</strong>
 										</h3>
-										<div class="infor_btn">
-											<a href="movie_board_2.html">상세보기</a>
-										</div>
 									</div>
 								</div>
 								<div>
@@ -195,11 +187,8 @@
 									<div class="infor">
 										<h3>
 											<span class="icon a15 ir_pm">12세</span> <strong>담보<br>
-											<br></strong>
+												<br></strong>
 										</h3>
-										<div class="infor_btn">
-											<a href="movie_board_3.html">상세보기</a>
-										</div>
 									</div>
 								</div>
 								<div>
@@ -219,11 +208,8 @@
 									<div class="infor">
 										<h3>
 											<span class="icon a19 ir_pm">15세</span> <strong>노트북<br>
-											<br></strong>
+												<br></strong>
 										</h3>
-										<div class="infor_btn">
-											<a href="movie_board_4.html">상세보기</a>
-										</div>
 									</div>
 								</div>
 
@@ -231,7 +217,7 @@
 
 						</div>
 						<!-- 두번째 줄 -->
-						<div class="swiper-container2" style="margin-top:60px;">
+						<div class="swiper-container2" style="margin-top: 60px;">
 							<div class="chart_cont1 swiper-wrapper">
 								<div>
 									<div class="poster">
@@ -253,7 +239,7 @@
 									<div class="infor">
 										<h3>
 											<span class="icon a15 ir_pm">12세</span> <strong>위플래쉬<br>
-											<br></strong>
+												<br></strong>
 										</h3>
 										<div style="font-size: 100px;"></div>
 									</div>
@@ -320,7 +306,7 @@
 									<div class="infor">
 										<h3>
 											<span class="icon a19 ir_pm">15세</span> <strong>테넷<br>
-											<br></strong>
+												<br></strong>
 										</h3>
 										<div class="infor_btn"></div>
 									</div>
@@ -328,9 +314,9 @@
 
 							</div>
 						</div>
-						
+
 						<!-- 세번째 줄 -->
-						<div class="swiper-container2" style="margin-top:60px;">
+						<div class="swiper-container2" style="margin-top: 60px;">
 							<div class="chart_cont1 swiper-wrapper">
 								<div>
 									<div class="poster">
@@ -351,8 +337,8 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12세</span> <strong>페이트 스테이 나이트 헤븐즈필 제3장 스프링 송
-											</strong>
+											<span class="icon a15 ir_pm">12세</span> <strong>페이트
+												스테이 나이트 헤븐즈필 제3장 스프링 송 </strong>
 										</h3>
 										<div style="font-size: 100px;"></div>
 									</div>
@@ -375,7 +361,9 @@
 									<div class="infor">
 										<h3>
 											<span class="icon a15 ir_pm">12세</span> <strong>다만
-												21 브릿지: 테러 셧다운<br><br></strong>
+												21 브릿지: 테러 셧다운<br>
+											<br>
+											</strong>
 										</h3>
 										<div class="infor_btn"></div>
 									</div>
@@ -396,7 +384,8 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a15 ir_pm">12세</span> <strong>HER<br><br>
+											<span class="icon a15 ir_pm">12세</span> <strong>HER<br>
+											<br>
 											</strong>
 										</h3>
 										<div class="infor_btn"></div>
@@ -418,8 +407,9 @@
 									</div>
 									<div class="infor">
 										<h3>
-											<span class="icon a19 ir_pm">15세</span> <strong>GET OUT<br>
-											<br></strong>
+											<span class="icon a19 ir_pm">15세</span> <strong>GET
+												OUT<br> <br>
+											</strong>
 										</h3>
 										<div class="infor_btn"></div>
 									</div>

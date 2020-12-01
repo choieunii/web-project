@@ -17,7 +17,7 @@
    
    try {
       Class.forName("com.mysql.jdbc.Driver");
-      String url = "jdbc:mysql://localhost:3306/teamproject?serverTimezone=UTC";
+      String url = "jdbc:mysql://localhost:3306/web?serverTimezone=UTC";
       conn = DriverManager.getConnection(url, "root", "0000");
 
       stmt = conn.createStatement();

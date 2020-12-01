@@ -131,18 +131,21 @@ $(document).ready(function(){
 </head>
 
 <body>
-	<header id="header">
+<header id="header">
 		<div class="container">
 			<div class="row">
 				<div class="header clearfix">
 					<h1>
-						<a href="#"> <em><img src="assets/img/teamlogo_made.png" alt="teamlogo"></em><br>
+						<a href="#"> <em><img src="assets/img/teamlogo_made.png"
+								alt="teamlogo" onclick="location.href='main.jsp'"></em><br>
 						</a>
 					</h1>
-				</div>
-			</div>
-		</div>
+					
+                </div>
+            </div>
+        </div>
 	</header>
+	<!-- //header -->
 	<br>
 	<div id="box">
 		<div id="title">아이디 찾기/비밀번호 찾기 <small>(간편찾기)</small></div>

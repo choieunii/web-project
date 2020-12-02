@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+th,td {
+	padding: 8px;
+}
 /* 레이아웃 */
 #mNav {
 	display: none;

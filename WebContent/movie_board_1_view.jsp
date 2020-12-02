@@ -38,21 +38,32 @@
     
     
     <section id="banner">
-        <h2 class="ir_so">최신 영화 소식</h2>
-        <div class="banner_menu">
-            <div class="container">
-                <div class="row">
-
-                    <div class="bm_right">
-                        <ul>
-                            <li class="purple"><a href="#" onclick="location.href='login.jsp'">로그인 </a></li>
-                            <li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
-                            <li class="purple"><a href="#"  onclick="location.href='movieChoice.jsp'">영화 예매</a></li>                                                 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<h2 class="ir_so">최신 영화 소식</h2>
+		<div class="slider">
+		<div class="banner_menu">
+			<div class="container">
+				<div class="row">
+					<div class="bm_right">
+						<ul>
+							<%
+                          	if(session.getAttribute("id") != null){
+                           	%>
+                                <li class="purple"><a href="./logout.jsp">로그아웃 </a></li>
+                           	<%
+                           	}
+                            else{
+                            %>
+                            	<li class="purple"><a href="./login.jsp">로그인 </a></li>
+                            <% 
+                            } 
+                            %>
+							<li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
+                            <li class="purple"><a href="#" onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
     
     
     
@@ -63,7 +74,7 @@
                     <h2 class="ir_so">영화 예매</h2>
                     <div class="movie_title">
                         <ul>
-                            <li class="active" style="width:100%"><a href="#">영화 게시판 - 도굴</a></li>
+                            <li class="active" style="width:100%"><a href="#">영화 게시판 </a></li>
                         </ul>
                     </div>
                     <div class="movie_chart">
@@ -89,7 +100,7 @@
                        	
 
      	                        <!-- 게시판 -->  
-<div style="width:700px; font-size:12pt;"><center>
+<div style="width:720px; font-size:12pt; margin-left:50px;"><center>
 <%
 if(request.getParameter("boardNo") == null) {
     response.sendRedirect(request.getContextPath()+"/movie_board_1_list.jsp");
@@ -111,17 +122,17 @@ if(request.getParameter("boardNo") == null) {
         resultSet = statement.executeQuery();
         if(resultSet.next()) {
 %>
-            <div style="background-color:white">글번호 :</div>
+            <div style="background-color:white;">글번호 </div>
             <div style="background-color:lightgray"><%=boardNo%></div><br>
-            <div style="background-color:white">글 제목 :</div>
+            <div style="background-color:white">글 제목 </div>
             <div style="background-color:lightgray"><%=resultSet.getString("board_title")%></div><br>
-            <div style="background-color:white">글 내용 :</div>
+            <div style="background-color:white">글 내용 </div>
             <div style="background-color:lightgray"><%=resultSet.getString("board_content")%></div><br>
-            <div style="background-color:white">작성자 :</div>
+            <div style="background-color:white">작성자 </div>
             <div style="background-color:lightgray"><%=resultSet.getString("board_user")%></div><br>
-            <div style="background-color:white">작성 날짜 :</div>
+            <div style="background-color:white">작성 날짜 </div>
             <div style="background-color:lightgray"><%=resultSet.getString("board_date")%></div><br>
-<div>
+<div style="margin-top:20px;">
     <a href="<%=request.getContextPath()%>/movie_board_1_md.jsp?boardNo=<%=boardNo%>">수정</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="<%=request.getContextPath()%>/movie_board_1_rm.jsp?boardNo=<%=boardNo%>">삭제</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="<%=request.getContextPath()%>/movie_board_1_list.jsp?boardNo=<%=boardNo%>">목록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

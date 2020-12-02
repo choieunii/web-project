@@ -36,22 +36,33 @@
 	</header>
 	<!-- //header -->
     
-    <section id="banner">
-        <h2 class="ir_so">최신 영화 소식</h2>
-        <div class="banner_menu">
-            <div class="container">
-                <div class="row">
-
-                    <div class="bm_right">
-                        <ul>
-                            <li class="purple"><a href="#" onclick="location.href='login.jsp'">로그인 </a></li>
-                            <li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
-                            <li class="purple"><a href="#"  onclick="location.href='movieChoice.jsp'">영화 예매</a></li>                                                     
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+   <section id="banner">
+		<h2 class="ir_so">최신 영화 소식</h2>
+		<div class="slider">
+		<div class="banner_menu">
+			<div class="container">
+				<div class="row">
+					<div class="bm_right">
+						<ul>
+							<%
+                          	if(session.getAttribute("id") != null){
+                           	%>
+                                <li class="purple"><a href="./logout.jsp">로그아웃 </a></li>
+                           	<%
+                           	}
+                            else{
+                            %>
+                            	<li class="purple"><a href="./login.jsp">로그인 </a></li>
+                            <% 
+                            } 
+                            %>
+							<li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
+                            <li class="purple"><a href="#" onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
     
     
     
@@ -62,7 +73,7 @@
                     <h2 class="ir_so">영화 예매</h2>
                     <div class="movie_title">
                         <ul>
-                            <li class="active" style="width:100%"><a href="#">영화 게시판 - 도굴</a></li>
+                            <li class="active" style="width:100%"><a href="#">영화 게시판 </a></li>
                         </ul>
                     </div>
                     <div class="movie_chart">
@@ -91,13 +102,13 @@
 		<div class="row">
 	<form id="insertFrm" name="insertFrm" action="<%=request.getContextPath()%>/movie_board_1_wtdb.jsp" method="post">
     <div>글제목 : </div>
-    <div><input name="boardTitle" id="boardTitle" type="text"/></div>
+    <div><input name="boardTitle" id="boardTitle" type="text" style="width : 690px; height: 25px;"/></div>
      <div>작성자 : </div>
-    <div><input name="boardUser" id="boardUser" type="text"/></div>
+    <div><input name="boardUser" id="boardUser" type="text" style="width : 690px; height: 25px;"/></div>
     <div>글내용 : </div>
-    <div><textarea name="boardContent" id="boardContent" rows="5" cols="50"></textarea></div>
+    <div><textarea name="boardContent" id="boardContent" rows="5" cols="50" style="width : 690px; height: 300px;"></textarea></div>
       <div>비밀번호 : </div>
-    <div><input name="boardPw" id="boardPw" type="password"/></div>
+    <div><input name="boardPw" id="boardPw" type="password" style="height:25px;"/></div>
     
     <div><br>
         <input type="button" value=" 글 입력 " onclick="javascript:Insert();"  style="width:90px; height: 40px; border:none; margin-top:10px; font-size: 15px; background-color: #3a0e6a; color:white;"/>&nbsp;&nbsp;&nbsp;

@@ -18,6 +18,11 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&amp;subset=korean" rel="stylesheet">
     
 </head>
+<style>
+th,td {
+	padding: 8px;
+}
+</style>
 <body>
     
     	<header id="header">
@@ -37,22 +42,33 @@
 	<!-- //header -->
     
     
-    <section id="banner">
-        <h2 class="ir_so">최신 영화 소식</h2>
-        <div class="banner_menu">
-            <div class="container">
-                <div class="row">
-
-                    <div class="bm_right">
-                        <ul>
-                            <li class="purple"><a href="#" onclick="location.href='login.jsp'">로그인 </a></li>
-                            <li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
-                            <li class="purple"><a href="#"  onclick="location.href='movieChoice.jsp'">영화 예매</a></li>                                                  
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+   <section id="banner">
+		<h2 class="ir_so">최신 영화 소식</h2>
+		<div class="slider">
+		<div class="banner_menu">
+			<div class="container">
+				<div class="row">
+					<div class="bm_right">
+						<ul>
+							<%
+                          	if(session.getAttribute("id") != null){
+                           	%>
+                                <li class="purple"><a href="./logout.jsp">로그아웃 </a></li>
+                           	<%
+                           	}
+                            else{
+                            %>
+                            	<li class="purple"><a href="./login.jsp">로그인 </a></li>
+                            <% 
+                            } 
+                            %>
+							<li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
+                            <li class="purple"><a href="#" onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
     
     
     
@@ -63,7 +79,7 @@
                     <h2 class="ir_so">영화 예매</h2>
                     <div class="movie_title">
                         <ul>
-                            <li class="active" style="width:100%"><a href="#">영화 게시판 - 도굴</a></li>
+                            <li class="active" style="width:100%"><a href="#">영화 게시판 </a></li>
                         </ul>
                     </div>
                     <div class="movie_chart">
@@ -126,7 +142,7 @@ try {
     listStatement.setInt(2, pagePerRow); 
     listResultSet = listStatement.executeQuery();
 %>
-    <table border="1" style="background-color:white">
+    <table border="0"; style="background-color:white; margin-left: 50px;">
         <thead>
             <tr>
             	<th style="width:100px">글 번호</th>
@@ -156,7 +172,7 @@ try {
         </tbody>
     </table>
     <br><br>
-    <input type="button" onclick="location.href='<%=request.getContextPath()%>/movie_board_1.jsp'" value=" 게시글 입력 " style="width:130px; height: 40px; border:none; margin-top:10px; font-size: 15px; background-color: #3a0e6a; color:white;">
+    <input type="button" onclick="location.href='<%=request.getContextPath()%>/movie_board_1.jsp'" value=" 게시글 입력 " style="width:130px; height: 40px; border:none; margin-top:10px; margin-bottom: 10px;font-size: 15px; background-color: #3a0e6a; color:white;">
      
     
 <%

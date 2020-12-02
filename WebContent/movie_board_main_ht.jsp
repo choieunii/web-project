@@ -142,8 +142,8 @@ if(Integer.parseInt(request.getParameter("mv1"))==0&&Integer.parseInt(request.ge
 
 %>
 <br>
-<div>
-    <a href="<%=request.getContextPath()%>/movie_board_main.jsp">다시하기</a>
+<div style="width:130px; height: 40px; border:none; margin-top:10px; font-size: 15px; background-color: #3a0e6a; line-height: 40px;">
+    <a href="<%=request.getContextPath()%>/movie_board_main.jsp" style="color:white;">다시하기</a>
     </div>
 </center>
 </div>

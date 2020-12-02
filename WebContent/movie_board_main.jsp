@@ -37,21 +37,32 @@
 	<!-- //header -->
     
     <section id="banner">
-        <h2 class="ir_so">최신 영화 소식</h2>
-        <div class="banner_menu">
-            <div class="container">
-                <div class="row">
-
-                    <div class="bm_right">
-                        <ul>
-                            <li class="purple"><a href="#" onclick="location.href='login.jsp'">로그인 </a></li>
-                            <li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
-                            <li class="purple"><a href="#"  onclick="location.href='movieChoice.jsp'">영화 예매</a></li>                                                     
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<h2 class="ir_so">최신 영화 소식</h2>
+		<div class="slider">
+		<div class="banner_menu">
+			<div class="container">
+				<div class="row">
+					<div class="bm_right">
+						<ul>
+							<%
+                          	if(session.getAttribute("id") != null){
+                           	%>
+                                <li class="purple"><a href="./logout.jsp">로그아웃 </a></li>
+                           	<%
+                           	}
+                            else{
+                            %>
+                            	<li class="purple"><a href="./login.jsp">로그인 </a></li>
+                            <% 
+                            } 
+                            %>
+							<li class="purple"><a href="#" onclick="location.href='movie_board_main.jsp'">영화 게시판</a></li>
+                            <li class="purple"><a href="#" onclick="location.href='movieChoice.jsp'">영화 예매</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
     
     
     
@@ -80,7 +91,7 @@
                                         
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         <input type="button" style="color:red" value="♥" onclick="javascript:this.form.mv1.value++;test1(this.form.mv1.value);">
-                                        <input type=text id="mv1" name="mv1" value=0 style="width:30px">
+                                        <input type=text id="mv1" name="mv1" value=0 style="width:30px; margin:7px 0;">
 										                                     
                                         <div class="rank"><strong>1</strong></div>
                                         <!-- rank2 <div class="rank1"><strong>1</strong></div>-->
@@ -106,7 +117,7 @@
                                        
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         <input type="button" style="color:red" value="♥" onclick="javascript:this.form.mv2.value++;test2(this.form.mv2.value);">
-                                        <input type=text id="mv2" name="mv2" value=0 style="width:30px">
+                                        <input type=text id="mv2" name="mv2" value=0 style="width:30px; margin:7px 0;">
 										                                    
                                         <div class="rank"><strong>2</strong></div>
                                         <div class="mx">
@@ -131,7 +142,7 @@
                                         
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         <input type="button" style="color:red" value="♥" onclick="javascript:this.form.mv3.value++;test3(this.form.mv3.value);">
-                                        <input type=text id="mv3" name="mv3" value=0 style="width:30px">
+                                        <input type=text id="mv3" name="mv3" value=0 style="width:30px; margin:7px 0;">
 										                                     
                                         <div class="rank"><strong>3</strong></div>
                                         <div class="mx">
@@ -157,7 +168,7 @@
                                         
                                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         <input type="button" style="color:red" value="♥" onclick="javascript:this.form.mv4.value++;test4(this.form.mv4.value);">
-                                        <input type=text id="mv4" name="mv4" value=0 style="width:30px">                                        
+                                        <input type=text id="mv4" name="mv4" value=0 style="width:30px; margin:7px 0;">                                        
 										                                     
                                         <div class="rank"><strong>4</strong></div>
                                         <div class="mx">

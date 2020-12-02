@@ -138,8 +138,8 @@ if(request.getParameter("boardNo") == null) {
         <div>비밀번호확인: </div>
         <div><input name="boardPw" id="boardPw" type="password"/></div>
         
-            <input type="submit" value=" 글 수정 "/>
-            <input type="reset" value=" 초기화 "/>
+            <input type="submit" style="width:90px; height: 40px; border:none; margin-top:25px; font-size: 15px; background-color: #3a0e6a; color:white;" value=" 글 수정 "/>
+            <input type="reset" style="width:90px; height: 40px; border:none; margin-top:25px; font-size: 15px; background-color: #3a0e6a; color:white;" value=" 초기화 "/>
         </div>
     </form>
 <%

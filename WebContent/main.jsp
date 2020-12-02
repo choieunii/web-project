@@ -8,7 +8,6 @@
 	content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>영화관 사이트_메인</title>
-
 <!-- CSS -->
 <link rel="stylesheet" href="assets/css/reset13.css">
 <link rel="stylesheet" href="assets/css/style13.css">
